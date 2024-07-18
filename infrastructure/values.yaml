@@ -1,5 +1,5 @@
 # the chart version should coincide with the binary versions 
-version: 1.12.19-SNAPSHOT
+version: 1.13.21-SNAPSHOT
 # the version of the tractusx images
 txVersion: latest
 
@@ -32,14 +32,14 @@ dataspace:
   config: resources/agent.ttl
 
 ingress:
-  host: knowledge.dev.demo.catena-x.net
-  oemHost: knowledge-oem.dev.demo.catena-x.net
-  customerConnectorHost: &customerConnectorHost consumer-connector.knowledge.dev.demo.catena-x.net
-  customerAgentHost: &customerAgentHost consumer-agent.knowledge.dev.demo.catena-x.net
+  host: knowledge.int.catena-x.net
+  oemHost: knowledge-oem.int.catena-x.net
+  customerConnectorHost: &customerConnectorHost consumer-connector.knowledge.int.catena-x.net
+  customerAgentHost: &customerAgentHost consumer-agent.knowledge.int.catena-x.net
   issuer: &clusterIssuer letsencrypt-prod
-  oemAasHost: &oemAasHost oem-aas-bridge.knowledge.dev.demo.catena-x.net
+  oemAasHost: &oemAasHost oem-aas-bridge.knowledge.int.catena-x.net
 
-namespace: "product-knowledge"
+namespace: "product-knowledge-agents"
 
 security:
   htpasswd: ""
@@ -143,7 +143,7 @@ consumer-connector:
         authKey: *customerApiKey
     bdrs:
       server:
-        url: https://bpn-did-resolution-service.int.demo.catena-x.net/api/directory
+        url: https://bpn-did-resolution-service.int.catena-x.net/api/directory
     ingresses:
     - enabled: true
       hostname: *customerConnectorHost
@@ -156,11 +156,11 @@ consumer-connector:
       certManager:
         clusterIssuer: *clusterIssuer
     env:
-      EDC_DATAPLANE_SELECTOR_AGENTPLANE_URL: http:/hey-catena-dev-consumer-agent-plane-agentplane:8083/api/signaling/v1/dataflows
+      EDC_DATAPLANE_SELECTOR_AGENTPLANE_URL: http://knowledge-agents-consumer-agent-plane-agentplane:8083/api/signaling/v1/dataflows
       EDC_DATAPLANE_SELECTOR_AGENTPLANE_SOURCETYPES: cx-common:Protocol?w3c:http:SPARQL,cx-common:Protocol?w3c:http:SKILL
       EDC_DATAPLANE_SELECTOR_AGENTPLANE_TRANSFERTYPES: HttpData-PULL
       EDC_DATAPLANE_SELECTOR_AGENTPLANE_DESTINATIONTYPES: HttpProxy
-      EDC_DATAPLANE_SELECTOR_AGENTPLANE_PROPERTIES: '{ "publicApiUrl": "https://consumer-agent.knowledge.dev.demo.catena-x.net/api/public/" }'
+      EDC_DATAPLANE_SELECTOR_AGENTPLANE_PROPERTIES: '{ "publicApiUrl": "https://consumer-agent.knowledge.int.catena-x.net/api/public/" }'
       EDC_VAULT_URL_OVERRIDE: "https://tsyidsconnectors.vault.azure.net/"
       EDC_VAULT_URL_OVERRIDE_UNSAFE: false
       EDC_IAM_TRUSTED-ISSUER_0-ISSUER_ID: did:web:dim-static-prod.dis-cloud-prod.cfapps.eu10-004.hana.ondemand.com:dim-hosted:2f45795c-d6cc-4038-96c9-63cedc0cd266:holder-iatp
@@ -177,7 +177,7 @@ consumer-connector:
 
 consumer-agent-plane:
   image:
-    repository: ghcr.io/catenax-ng/tx-knowledge-agents-edc/agentplane-azure-vault
+    repository: tractusx/agentplane-azure-vault
   url: 
     public: ""
   participant:
@@ -247,20 +247,20 @@ consumer-agent-plane:
                       cx-common:id "BPNL00000003AYRE"^^xsd:string;
                       cx-common:id "BPNL00000003AVTH"^^xsd:string;
                       cx-common:id "BPNL00000003AZQP"^^xsd:string;
-                      cx-common:hasConnector <edcs://knowledge.dev.demo.catena-x.net/oem-edc-control/BPNL00000003COJN>.
+                      cx-common:hasConnector <edcs://knowledge.int.catena-x.net/oem-edc-control/BPNL00000003COJN>.
   agent:
     synchronization: 360000
     connectors: 
-      BPNL00000003COJN: https://knowledge.dev.demo.catena-x.net/oem-edc-control/BPNL00000003COJN
-      BPNL00000003CQI9: https://consumer-connector.knowledge.dev.demo.catena-x.net
+      BPNL00000003COJN: https://knowledge.int.catena-x.net/oem-edc-control/BPNL00000003COJN
+      BPNL00000003CQI9: https://consumer-connector.knowledge.int.catena-x.net
     services:
       # -- A regular expression which outgoing service URLs must match (unless overwritten by a specific asset property)
       allow: '(https|(edcs?))://.*'
 
 consumer-agent:
   image:
-    registry: ghcr.io/catenax-ng/
-    repository: tx-knowledge-agents/matchmaking-agent
+    registry: tractusx
+    repository: matchmaking-agent
   url: 
     public: ""
   participant:
@@ -304,7 +304,7 @@ consumer-agent:
                       cx-common:id "BPNL00000003AYRE"^^xsd:string;
                       cx-common:id "BPNL00000003AVTH"^^xsd:string;
                       cx-common:id "BPNL00000003AZQP"^^xsd:string;
-                      cx-common:hasConnector <edcs://knowledge.dev.demo.catena-x.net/oem-edc-control/BPNL00000003COJN>.
+                      cx-common:hasConnector <edcs://knowledge.int.catena-x.net/oem-edc-control/BPNL00000003COJN>.
   agent:
     endpoints:
       default:
@@ -314,18 +314,18 @@ consumer-agent:
         regex: /matchmaking/(.*)
     synchronization: 360000
     connectors: 
-      BPNL00000003COJN: https://knowledge.dev.demo.catena-x.net/oem-edc-control/BPNL00000003COJN
-      BPNL00000003CQI9: https://consumer-connector.knowledge.dev.demo.catena-x.net
+      BPNL00000003COJN: https://knowledge.int.catena-x.net/oem-edc-control/BPNL00000003COJN
+      BPNL00000003CQI9: https://consumer-connector.knowledge.int.catena-x.net
     services:
       # -- A regular expression which outgoing service URLs must match (unless overwritten by a specific asset property)
       allow: '(https|(edcs?))://.*'
 
 aas-bridge:
   image:
-    registry: ghcr.io/catenax-ng/
-    repository: tx-knowledge-agents-aas-bridge/aas-bridge
-    tag: 0.13.6-SNAPSHOT
-  aas:
+    registry: tractusx
+    repository: aas-bridge
+    tag: 1.13.7-SNAPSHOT
+    aas:
     persistence:
       # -- The default sparql server is embedded
       sparql: http://oem-provider-agent:8082/sparql

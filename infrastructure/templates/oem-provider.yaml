@@ -112,7 +112,7 @@ spec:
            type: RuntimeDefault
       containers:
         - name: oem-provider-agent
-          image: ghcr.io/catenax-ng/tx-knowledge-agents/provisioning-agent:1.12.19-SNAPSHOT
+          image: tractusx/provisioning-agent:1.13.21-SNAPSHOT
           imagePullPolicy: Always
           securityContext:
             capabilities:
@@ -222,7 +222,7 @@ metadata:
     nginx.ingress.kubernetes.io/use-regex: "true"
     nginx.ingress.kubernetes.io/enable-cors: "true"
     nginx.ingress.kubernetes.io/cors-allow-credentials: "true"
-    nginx.ingress.kubernetes.io/cors-allow-origin: "https://knowledge.dev.demo.catena-x.net, http://localhost:3000"
+    nginx.ingress.kubernetes.io/cors-allow-origin: "https://knowledge.int.catena-x.net, http://localhost:3000"
     nginx.ingress.kubernetes.io/cors-allow-methods: "GET, PUT, POST, DELETE, PATCH, OPTIONS"
     nginx.ingress.kubernetes.io/cors-allow-headers: "Host,DNT,X-Api-Key,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Authorization"
     nginx.ingress.kubernetes.io/x-forwarded-prefix: "/oem-provider-agent"
@@ -340,7 +340,7 @@ spec:
            type: RuntimeDefault
       containers:
         - name: oem-backend
-          image: ghcr.io/catenax-ng/product-knowledge/virtualizer-dremio:{{.Values.version}}
+          image: ghcr.io/catenax-ng/product-knowledge/virtualizer-dremio:1.12.19-SNAPSHOT
           imagePullPolicy: Always
           securityContext:
             capabilities:
@@ -448,7 +448,7 @@ metadata:
     nginx.ingress.kubernetes.io/use-regex: "true"
     nginx.ingress.kubernetes.io/enable-cors: "true"
     nginx.ingress.kubernetes.io/cors-allow-credentials: "true"
-    nginx.ingress.kubernetes.io/cors-allow-origin: "https://knowledge.dev.demo.catena-x.net, http://localhost:3000"
+    nginx.ingress.kubernetes.io/cors-allow-origin: "https://knowledge.int.catena-x.net, http://localhost:3000"
     nginx.ingress.kubernetes.io/cors-allow-methods: "GET, PUT, POST, DELETE, PATCH, OPTIONS"
     nginx.ingress.kubernetes.io/cors-allow-headers: "Host,DNT,X-Api-Key,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Authorization"
     nginx.ingress.kubernetes.io/x-forwarded-prefix: "/oem-backend"

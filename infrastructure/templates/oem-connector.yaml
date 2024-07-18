@@ -302,7 +302,7 @@ spec:
         seccompProfile:
           type: RuntimeDefault
       containers:
-        - image: tractusx/edc-controlplane-postgresql-azure-vault:0.7.0
+        - image: tractusx/edc-controlplane-postgresql-azure-vault:0.7.3
           imagePullPolicy: Always
           name: oem-control-plane
           securityContext:
@@ -428,7 +428,7 @@ metadata:
     nginx.ingress.kubernetes.io/use-regex: "true"
     nginx.ingress.kubernetes.io/enable-cors: "true"
     nginx.ingress.kubernetes.io/cors-allow-credentials: "true"
-    nginx.ingress.kubernetes.io/cors-allow-origin: "https://knowledge.dev.demo.catena-x.net, http://localhost:3000"
+    nginx.ingress.kubernetes.io/cors-allow-origin: "https://knowledge.int.catena-x.net, http://localhost:3000"
     nginx.ingress.kubernetes.io/cors-allow-methods: "GET, PUT, POST, DELETE, PATCH, OPTIONS"
     nginx.ingress.kubernetes.io/cors-allow-headers: "Host,DNT,X-Api-Key,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Authorization"
     nginx.ingress.kubernetes.io/x-forwarded-prefix: "/oem-control-plane"
@@ -484,7 +484,7 @@ spec:
         seccompProfile:
           type: RuntimeDefault
       containers:
-        - image: tractusx/edc-controlplane-postgresql-azure-vault:0.7.0
+        - image: tractusx/edc-controlplane-postgresql-azure-vault:0.7.3
           imagePullPolicy: Always
           name: oem-control-plane2
           securityContext:
@@ -610,7 +610,7 @@ metadata:
     nginx.ingress.kubernetes.io/use-regex: "true"
     nginx.ingress.kubernetes.io/enable-cors: "true"
     nginx.ingress.kubernetes.io/cors-allow-credentials: "true"
-    nginx.ingress.kubernetes.io/cors-allow-origin: "https://knowledge.dev.demo.catena-x.net, http://localhost:3000"
+    nginx.ingress.kubernetes.io/cors-allow-origin: "https://knowledge.int.catena-x.net, http://localhost:3000"
     nginx.ingress.kubernetes.io/cors-allow-methods: "GET, PUT, POST, DELETE, PATCH, OPTIONS"
     nginx.ingress.kubernetes.io/cors-allow-headers: "Host,DNT,X-Api-Key,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Authorization"
     nginx.ingress.kubernetes.io/x-forwarded-prefix: "/oem-control-plane2"
@@ -791,7 +791,7 @@ spec:
         seccompProfile:
           type: RuntimeDefault
       containers:
-        - image: ghcr.io/catenax-ng/tx-knowledge-agents-edc/agentplane-azure-vault:1.12.19-SNAPSHOT
+        - image: tractusx/agentplane-azure-vault:1.13.21-SNAPSHOT
           imagePullPolicy: Always
           name: oem-data-plane
           securityContext:
@@ -913,7 +913,7 @@ metadata:
     nginx.ingress.kubernetes.io/use-regex: "true"
     nginx.ingress.kubernetes.io/enable-cors: "true"
     nginx.ingress.kubernetes.io/cors-allow-credentials: "true"
-    nginx.ingress.kubernetes.io/cors-allow-origin: "https://knowledge.dev.demo.catena-x.net, http://localhost:3000"
+    nginx.ingress.kubernetes.io/cors-allow-origin: "https://knowledge.int.catena-x.net, http://localhost:3000"
     nginx.ingress.kubernetes.io/cors-allow-methods: "GET, PUT, POST, DELETE, PATCH, OPTIONS"
     nginx.ingress.kubernetes.io/cors-allow-headers: "Host,DNT,X-Api-Key,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Authorization"
     nginx.ingress.kubernetes.io/x-forwarded-prefix: "/oem-data-plane"
