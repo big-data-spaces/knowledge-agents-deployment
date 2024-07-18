@@ -39,7 +39,7 @@ ingress:
   issuer: &clusterIssuer letsencrypt-prod
   oemAasHost: &oemAasHost oem-aas-bridge.knowledge.int.catena-x.net
 
-namespace: "product-knowledge-agents"
+namespace: "product-knowledge"
 
 security:
   htpasswd: ""
