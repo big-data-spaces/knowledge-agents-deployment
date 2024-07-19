@@ -23,14 +23,14 @@
 
 @base <urn:cx:Graph:local:Dataspace> .
 
-bpnl:BPNL00000003COJN owl:sameAs bpnl:BPNL00000003AYRE;
+bpnl:BPNL000000000SM0 owl:sameAs bpnl:BPNL00000003AYRE;
                       owl:sameAs bpnl:BPNL00000003AVTH;
                       owl:sameAs bpnl:BPNL00000003AZQP;
-                      cx:hasBusinessPartnerNumber "BPNL00000003COJN"^^xsd:string;
+                      cx:hasBusinessPartnerNumber "BPNL000000000SM0"^^xsd:string;
                       cx:hasBusinessPartnerNumber "BPNL00000003AYRE"^^xsd:string;
                       cx:hasBusinessPartnerNumber "BPNL00000003AVTH"^^xsd:string;
                       cx:hasBusinessPartnerNumber "BPNL00000003AZQP"^^xsd:string;
-                      cx-common:id "BPNL00000003COJN"^^xsd:string;
+                      cx-common:id "BPNL000000000SM0"^^xsd:string;
                       cx-common:id "BPNL00000003AYRE"^^xsd:string;
                       cx-common:id "BPNL00000003AVTH"^^xsd:string;
                       cx-common:id "BPNL00000003AZQP"^^xsd:string;
@@ -41,10 +41,10 @@ bpnl:BPNL00000003COJN owl:sameAs bpnl:BPNL00000003AYRE;
                       cx-common:hasConnector <edc://oem-control-plane:8282>.
                       
 
-bpnl:BPNL00000003CPIY owl:sameAs bpnl:BPNL00000003B2OM;
-                      cx:hasBusinessPartnerNumber "BPNL00000003CPIY"^^xsd:string;
+bpnl:BPNL000000000TLB owl:sameAs bpnl:BPNL00000003B2OM;
+                      cx:hasBusinessPartnerNumber "BPNL000000000TLB"^^xsd:string;
                       cx:hasBusinessPartnerNumber "BPNL00000003B2OM"^^xsd:string;
-                      cx-common:id  "BPNL00000003CPIY"^^xsd:string;
+                      cx-common:id  "BPNL000000000TLB"^^xsd:string;
                       cx-common:id  "BPNL00000003B2OM"^^xsd:string;
                       cx:hasConnector <edc://tiera-control-plane:8282>;
                       cx-common:hasConnector <edc://tiera-control-plane:8282>.

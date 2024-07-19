@@ -4,19 +4,19 @@ version: 1.13.21-SNAPSHOT
 txVersion: latest
 
 dataspace:
-  bpnOem: BPNL00000003COJN
-  miwClientOem: sb-168e5a6e-353a-40ca-bf2d-7b615bb21cb4!b457995|ica-production-dim-prod-eu10-004-prod-dis-cloud-approuter!b174292
+  bpnOem: BPNL000000000SM0
+  miwClientOem: sb-1dad8779-948e-4227-8ee0-344806a52aa8!b497177|ica-production-dim-prod-eu10-004-prod-dis-cloud-approuter!b174292
   privateKeyAliasOem: "oem-daps-key"
   publicKeyAliasOem: "oem-daps-crt"
   dapsClientIdOem: ""
-  bpnTier1: BPNL00000003CPIY
-  miwClientTier1: sb-ee866292-fec1-4359-9066-72d874d177b9!b458141|ica-production-dim-prod-eu10-004-prod-dis-cloud-approuter!b174292
+  bpnTier1: BPNL000000000TLB
+  miwClientTier1: sb-1058de06-db69-47d9-a393-aa7e130f23d7!b497178|ica-production-dim-prod-eu10-004-prod-dis-cloud-approuter!b174292
   privateKeyAliasTier1: "tier1-daps-key"
   publicKeyAliasTier1: "tier1-daps-crt"
   dapsClientIdTier1: ""
   bpnCustomer: &customerBpn BPNL00000003CQI9
-  didCustomer: &customerDid did:web:portal-backend.int.demo.catena-x.net:api:administration:staticdata:did:BPNL00000003CQI9
-  oauthCustomer: &customerOauth https://bpnl00000003cqi9-knowledge--agents--consumer--ltd.authentication.eu10.hana.ondemand.com/oauth/token
+  didCustomer: &customerDid did:web:portal-backend.int.catena-x.net:api:administration:staticdata:did:BPNL00000003CQI9
+  oauthCustomer: &customerOauth https://bpnl00000003cqi9-knowledge--agent--supplier.eu10.hana.ondemand.com/oauth/token
   clientCustomer: &customerOauthClient sb-ccdbb0a7-ab0f-4e78-b5eb-95d3a5d5ed2b!b458165|ica-production-dim-prod-eu10-004-prod-dis-cloud-approuter!b174292
   secretCustomer: &customerOauthSecret sts-consumer-secret
   dbCustomerUrl: &customerDbUrl "jdbc:postgresql://postgresql:5432/consumer"
@@ -240,18 +240,18 @@ consumer-agent-plane:
       @prefix bpns: <bpn:site:> .
       @base <GraphAsset?local=Dataspace> .
       
-      bpnl:BPNL00000003COJN owl:sameAs bpnl:BPNL00000003AYRE;
+      bpnl:BPNL000000000SM0 owl:sameAs bpnl:BPNL00000003AYRE;
                       owl:sameAs bpnl:BPNL00000003AVTH;
                       owl:sameAs bpnl:BPNL00000003AZQP;
-                      cx-common:id "BPNL00000003COJN"^^xsd:string;
+                      cx-common:id "BPNL000000000SM0"^^xsd:string;
                       cx-common:id "BPNL00000003AYRE"^^xsd:string;
                       cx-common:id "BPNL00000003AVTH"^^xsd:string;
                       cx-common:id "BPNL00000003AZQP"^^xsd:string;
-                      cx-common:hasConnector <edcs://knowledge.int.catena-x.net/oem-edc-control/BPNL00000003COJN>.
+                      cx-common:hasConnector <edcs://knowledge.int.catena-x.net/oem-edc-control/BPNL000000000SM0>.
   agent:
     synchronization: 360000
     connectors: 
-      BPNL00000003COJN: https://knowledge.int.catena-x.net/oem-edc-control/BPNL00000003COJN
+      BPNL000000000SM0: https://knowledge.int.catena-x.net/oem-edc-control/BPNL000000000SM0
       BPNL00000003CQI9: https://consumer-connector.knowledge.int.catena-x.net
     services:
       # -- A regular expression which outgoing service URLs must match (unless overwritten by a specific asset property)
@@ -259,7 +259,7 @@ consumer-agent-plane:
 
 consumer-agent:
   image:
-    registry: tractusx
+    registry: tractusx/
     repository: matchmaking-agent
   url: 
     public: ""
@@ -297,14 +297,14 @@ consumer-agent:
       @prefix bpns: <bpn:site:> .
       @base <GraphAsset?local=Dataspace> .
       
-      bpnl:BPNL00000003COJN owl:sameAs bpnl:BPNL00000003AYRE;
+      bpnl:BPNL000000000SM0 owl:sameAs bpnl:BPNL00000003AYRE;
                       owl:sameAs bpnl:BPNL00000003AVTH;
                       owl:sameAs bpnl:BPNL00000003AZQP;
-                      cx-common:id "BPNL00000003COJN"^^xsd:string;
+                      cx-common:id "BPNL000000000SM0"^^xsd:string;
                       cx-common:id "BPNL00000003AYRE"^^xsd:string;
                       cx-common:id "BPNL00000003AVTH"^^xsd:string;
                       cx-common:id "BPNL00000003AZQP"^^xsd:string;
-                      cx-common:hasConnector <edcs://knowledge.int.catena-x.net/oem-edc-control/BPNL00000003COJN>.
+                      cx-common:hasConnector <edcs://knowledge.int.catena-x.net/oem-edc-control/BPNL000000000SM0>.
   agent:
     endpoints:
       default:
@@ -314,7 +314,7 @@ consumer-agent:
         regex: /matchmaking/(.*)
     synchronization: 360000
     connectors: 
-      BPNL00000003COJN: https://knowledge.int.catena-x.net/oem-edc-control/BPNL00000003COJN
+      BPNL000000000SM0: https://knowledge.int.catena-x.net/oem-edc-control/BPNL000000000SM0
       BPNL00000003CQI9: https://consumer-connector.knowledge.int.catena-x.net
     services:
       # -- A regular expression which outgoing service URLs must match (unless overwritten by a specific asset property)
@@ -322,7 +322,7 @@ consumer-agent:
 
 aas-bridge:
   image:
-    registry: tractusx
+    registry: tractusx/
     repository: aas-bridge
     tag: 1.13.7-SNAPSHOT
     aas:

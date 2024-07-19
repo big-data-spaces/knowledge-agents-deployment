@@ -23,29 +23,29 @@
 
 @base <urn:cx:Graph:local:Dataspace> .
 
-bpnl:BPNL00000003COJN owl:sameAs bpnl:BPNL00000003AYRE;
+bpnl:BPNL000000000SM0 owl:sameAs bpnl:BPNL00000003AYRE;
                       owl:sameAs bpnl:BPNL00000003AVTH;
                       owl:sameAs bpnl:BPNL00000003AZQP;
-                      cx:hasBusinessPartnerNumber "BPNL00000003COJN"^^xsd:string;
+                      cx:hasBusinessPartnerNumber "BPNL000000000SM0"^^xsd:string;
                       cx:hasBusinessPartnerNumber "BPNL00000003AYRE"^^xsd:string;
                       cx:hasBusinessPartnerNumber "BPNL00000003AVTH"^^xsd:string;
                       cx:hasBusinessPartnerNumber "BPNL00000003AZQP"^^xsd:string;
-                      cx-common:id "BPNL00000003COJN"^^xsd:string;
+                      cx-common:id "BPNL000000000SM0"^^xsd:string;
                       cx-common:id "BPNL00000003AYRE"^^xsd:string;
                       cx-common:id "BPNL00000003AVTH"^^xsd:string;
                       cx-common:id "BPNL00000003AZQP"^^xsd:string;
                       cx:isIssuerOfVehicleIdentificationNumber "WBAAL31029PZ00001"^^xsd:string;
                       cx:isIssuerOfVehicleIdentificationNumber "WBAAL31029PZ00002"^^xsd:string;
                       cx:isIssuerOfVehicleIdentificationNumber "WBAAL31029PZ00003"^^xsd:string;
-                      cx:hasConnector <edcs://knowledge.dev.demo.catena-x.net/oem-edc-control/BPNL00000003COJN>;
-                      cx-common:hasConnector <edcs://knowledge.dev.demo.catena-x.net/oem-edc-control/BPNL00000003COJN>.
+                      cx:hasConnector <edcs://knowledge.dev.demo.catena-x.net/oem-edc-control/BPNL000000000SM0>;
+                      cx-common:hasConnector <edcs://knowledge.dev.demo.catena-x.net/oem-edc-control/BPNL000000000SM0>.
 
-bpnl:BPNL00000003CPIY owl:sameAs bpnl:BPNL00000003B2OM;
-                      cx:hasBusinessPartnerNumber "BPNL00000003CPIY"^^xsd:string;
+bpnl:BPNL000000000TLB owl:sameAs bpnl:BPNL00000003B2OM;
+                      cx:hasBusinessPartnerNumber "BPNL000000000TLB"^^xsd:string;
                       cx:hasBusinessPartnerNumber "BPNL00000003B2OM"^^xsd:string;
-                      cx-common:id  "BPNL00000003CPIY"^^xsd:string;
-                      cx-common:id  "BPNL00000003B2OM"^^xsd:string;                      cx:hasConnector <edcs://knowledge.dev.demo.catena-x.net/tiera-edc-control/BPNL00000003CPIY>;
-                      cx-common:hasConnector <edcs://knowledge.dev.demo.catena-x.net/tiera-edc-control/BPNL00000003CPIY>.
+                      cx-common:id  "BPNL000000000TLB"^^xsd:string;
+                      cx-common:id  "BPNL00000003B2OM"^^xsd:string;                      cx:hasConnector <edcs://knowledge.dev.demo.catena-x.net/tiera-edc-control/BPNL000000000TLB>;
+                      cx-common:hasConnector <edcs://knowledge.dev.demo.catena-x.net/tiera-edc-control/BPNL000000000TLB>.
 
 bpnl:BPNL00000003CQI9 owl:sameAs bpnl:BPNL00000007OR16;
                       owl:sameAs bpnl:BPNL00000002HCQ9;

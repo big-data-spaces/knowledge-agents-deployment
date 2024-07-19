@@ -71,7 +71,7 @@ data:
     ###
 
     edc.iam.trusted-issuer.catena.id=did:web:dim-static-prod.dis-cloud-prod.cfapps.eu10-004.hana.ondemand.com:dim-hosted:2f45795c-d6cc-4038-96c9-63cedc0cd266:holder-iatp
-    edc.iam.sts.oauth.token.url=https://bpnl00000003cojn-knowledge--agents--manufacturer--ag.authentication.eu10.hana.ondemand.com/oauth/token
+    edc.iam.sts.oauth.token.url=https://BPNL000000000SM0-knowledge--agents--manufacturer--ag.authentication.eu10.hana.ondemand.com/oauth/token
     edc.iam.sts.oauth.client.id={{ .Values.dataspace.miwClientOem }}
     edc.iam.sts.oauth.client.secret.alias=sts-oem-secret
     edc.iam.sts.dim.url=https://dis-integration-service-prod.eu10.dim.cloud.sap/api/v2.0.0/iatp/catena-x-portal
@@ -202,7 +202,7 @@ data:
     ###
 
     edc.iam.trusted-issuer.catena.id=did:web:dim-static-prod.dis-cloud-prod.cfapps.eu10-004.hana.ondemand.com:dim-hosted:2f45795c-d6cc-4038-96c9-63cedc0cd266:holder-iatp
-    edc.iam.sts.oauth.token.url=https://bpnl00000003cojn-knowledge--agents--manufacturer--ag.authentication.eu10.hana.ondemand.com/oauth/token
+    edc.iam.sts.oauth.token.url=https://BPNL000000000SM0-knowledge--agents--manufacturer--ag.authentication.eu10.hana.ondemand.com/oauth/token
     edc.iam.sts.oauth.client.id={{ .Values.dataspace.miwClientOem }}
     edc.iam.sts.oauth.client.secret.alias=sts-oem-secret
     edc.iam.sts.dim.url=https://dis-integration-service-prod.eu10.dim.cloud.sap/api/v2.0.0/iatp/catena-x-portal
@@ -678,10 +678,14 @@ data:
     web.http.callback.port=8187
     web.http.callback.path=/callback
 
-    # We setup a combined validation endpoint for two control planes
-    edc.dataplane.token.validation.endpoint=http://oem-data-plane:8080/api/validation
-    edc.dataplane.token.validation.endpoints.provider=http://oem-control-plane:8083/control/token
-    edc.dataplane.token.validation.endpoints.consumer=http://oem-control-plane2:8083/control/token
+    edc.dataplane.selector.agentplane.url=http://oem-data-plane:8083/api/signaling/v1/dataflows
+    edc.dataplane.selector.agentplane.sourcetypes=cx-common:Protocol?w3c:http:SPARQL,cx-common:Protocol?w3c:http:SKILL,HttpData,AmazonS3,AzureStorage
+    edc.dataplane.selector.agentplane.transfertypes=HttpData-PULL,HttpData-PUSH,AmazonS3-PUSH,AzureStorage-PUSH
+    edc.dataplane.selector.agentplane.destinationtypes=HttpData,HttpProxy,AmazonS3,AzureStorage
+    edc.dataplane.selector.agentplane.properties={ "publicApiUrl": "http://oem-data-plane:8081/api/public/" }
+
+    edc.control.endpoint=http://oem-data-plane:8083/api/signaling
+    edc.dpf.selector.url=http://oem-control-plane:8083/control/v1/dataplanes
 
     ###
     # Chapter Security
@@ -705,11 +709,11 @@ data:
     ###
 
     edc.iam.trusted-issuer.catena.id=did:web:dim-static-prod.dis-cloud-prod.cfapps.eu10-004.hana.ondemand.com:dim-hosted:2f45795c-d6cc-4038-96c9-63cedc0cd266:holder-iatp
-    edc.iam.sts.oauth.token.url=https://bpnl00000003cojn-knowledge--agents--manufacturer--ag.authentication.eu10.hana.ondemand.com/oauth/token
+    edc.iam.sts.oauth.token.url=https://BPNL000000000SM0-knowledge--agents--manufacturer.authentication.eu10.hana.ondemand.com/oauth/token
     edc.iam.sts.oauth.client.id={{ .Values.dataspace.miwClientOem }}
     edc.iam.sts.oauth.client.secret.alias=sts-oem-secret
     edc.iam.sts.dim.url=https://dis-integration-service-prod.eu10.dim.cloud.sap/api/v2.0.0/iatp/catena-x-portal
-    tx.iam.iatp.bdrs.server.url=https://bpn-did-resolution-service.int.demo.catena-x.net/api/directory
+    tx.iam.iatp.bdrs.server.url=https://bpn-did-resolution-service.int.catena-x.net/api/directory
     tx.iam.iatp.bdrs.cache.validity=600
 
     ### 
@@ -726,13 +730,14 @@ data:
     cx.agent.controlplane.management.provider=http://oem-control-plane:8081/management
     cx.agent.callback=http://oem-data-plane:8187/callback/transfer-process-started
     cx.agent.skill.contract.default=Contract?oem=Skill
+    cx.agent.edc.version=0.7.3
 
     ###
     # Chapter Agent Catalogue
     ###
     cx.agent.asset.file=dataspace.ttl
     cx.agent.dataspace.synchronization=360000
-    cx.agent.dataspace.remotes=BPNL00000003COJN=https://{{ .Values.ingress.host}}/oem-edc-control/{{ .Values.dataspace.bpnOem }},BPNL00000003CPIY=https://{{ .Values.ingress.host}}/tiera-edc-control/{{ .Values.dataspace.bpnTier1 }}
+    cx.agent.dataspace.remotes=BPNL000000000SM0=https://{{ .Values.ingress.host}}/oem-edc-control/{{ .Values.dataspace.bpnOem }},BPNL000000000TLB=https://{{ .Values.ingress.host}}/tiera-edc-control/{{ .Values.dataspace.bpnTier1 }}
   
     ###
     # Chapter Persistence

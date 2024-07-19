@@ -70,7 +70,7 @@ data:
     ###
 
     edc.iam.trusted-issuer.catena.id=did:web:dim-static-prod.dis-cloud-prod.cfapps.eu10-004.hana.ondemand.com:dim-hosted:2f45795c-d6cc-4038-96c9-63cedc0cd266:holder-iatp
-    edc.iam.sts.oauth.token.url=https://bpnl00000003cpiy-knowledge--agents--supplier--inc.authentication.eu10.hana.ondemand.com/oauth/token
+    edc.iam.sts.oauth.token.url=https://BPNL000000000TLB-knowledge--agents--supplier--inc.authentication.eu10.hana.ondemand.com/oauth/token
     edc.iam.sts.oauth.client.id={{ .Values.dataspace.miwClientTier1 }}
     edc.iam.sts.oauth.client.secret.alias=sts-supplier-secret
     edc.iam.sts.dim.url=https://dis-integration-service-prod.eu10.dim.cloud.sap/api/v2.0.0/iatp/catena-x-portal
@@ -346,7 +346,7 @@ data:
     edc.hostname={{ .Values.ingress.host }}
     
     edc.participant.id={{ .Values.dataspace.bpnTier1 }}
-    edc.iam.issuer.id=did:web:portal-backend.int.demo.catena-x.net:api:administration:staticdata:did:{{ .Values.dataspace.bpnTier1 }}
+    edc.iam.issuer.id=did:web:portal-backend.int.catena-x.net:api:administration:staticdata:did:{{ .Values.dataspace.bpnTier1 }}
 
     ###
     # Chapter Web Server / Ports
@@ -363,9 +363,9 @@ data:
     web.http.callback.port=8187
     web.http.callback.path=/callback
 
-    # We setup a combined validation endpoint for two control planes
-    edc.dataplane.token.validation.endpoint=http://tiera-control-plane:8083/control/token
-
+    edc.control.endpoint=http://tiera-data-plane:8083/api/signaling
+    edc.dpf.selector.url=http://tiera-control-plane:8083/control/v1/dataplanes
+    
     ###
     # Chapter Security
     ###
@@ -396,11 +396,11 @@ data:
     ###
 
     edc.iam.trusted-issuer.catena.id=did:web:dim-static-prod.dis-cloud-prod.cfapps.eu10-004.hana.ondemand.com:dim-hosted:2f45795c-d6cc-4038-96c9-63cedc0cd266:holder-iatp
-    edc.iam.sts.oauth.token.url=https://bpnl00000003cpiy-knowledge--agents--supplier--inc.authentication.eu10.hana.ondemand.com/oauth/token
+    edc.iam.sts.oauth.token.url=https://BPNL000000000TLB-knowledge--agents--supplier.authentication.eu10.hana.ondemand.com/oauth/token
     edc.iam.sts.oauth.client.id={{ .Values.dataspace.miwClientTier1 }}
     edc.iam.sts.oauth.client.secret.alias=sts-supplier-secret
     edc.iam.sts.dim.url=https://dis-integration-service-prod.eu10.dim.cloud.sap/api/v2.0.0/iatp/catena-x-portal
-    tx.iam.iatp.bdrs.server.url=https://bpn-did-resolution-service.int.demo.catena-x.net/api/directory
+    tx.iam.iatp.bdrs.server.url=https://bpn-did-resolution-service.int.catena-x.net/api/directory
     tx.iam.iatp.bdrs.cache.validity=600
 
     ###
@@ -423,7 +423,7 @@ data:
 
     cx.agent.asset.file=dataspace.ttl
     cx.agent.dataspace.synchronization=360000
-    cx.agent.dataspace.remotes=BPNL00000003CPIY=https://{{ .Values.ingress.host}}/tiera-edc-control/{{ .Values.dataspace.bpnTier1 }}
+    cx.agent.dataspace.remotes=BPNL000000000TLB=https://{{ .Values.ingress.host}}/tiera-edc-control/{{ .Values.dataspace.bpnTier1 }}
 
     ###
     # Chapter Persistence
