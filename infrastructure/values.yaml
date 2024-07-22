@@ -333,7 +333,7 @@ aas-bridge:
     default:
       path: "/"
       # -- An optional regex path match (whose match groups could be used in an nginx-annotation of the ingress)
-      regex: {}
+      regex: "/"
   ingresses:
   - enabled: true
     hostname: *oemAasHost
