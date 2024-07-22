@@ -150,7 +150,8 @@ consumer-connector:
       endpoints:
         - protocol
         - management
-        - api
+        - control
+        - default
       tls:
         enabled: true
       certManager:
