@@ -17,12 +17,12 @@ dependencies:
     - name: agent-plane-azure-vault
       alias: consumer-agent-plane
       version: "1.13.21-SNAPSHOT"
-      repository: https://catenax-ng.github.io/tx-knowledge-agents-edc
+      repository: https://eclipse-tractusx.github.io/charts/dev
     - name: matchmaking-agent
       alias: consumer-agent
       version: "1.13.21-SNAPSHOT"
-      repository: https://catenax-ng.github.io/tx-knowledge-agents
+      repository: https://eclipse-tractusx.github.io/charts/dev
     - name: aas-bridge
       version: "0.13.7-SNAPSHOT"
-      repository: https://catenax-ng.github.io/tx-knowledge-agents-aas-bridge
+      repository: https://eclipse-tractusx.github.io/charts/dev
 
