@@ -139,7 +139,15 @@ consumer-connector:
     azure: *azureVault
   controlplane: &consumerControlPlane
     endpoints:
+      control:
+        port: 8083
+        path: "/control"
+      protocol:
+        port: 8084
+        path: "/api/v1/dsp"
       management:
+        port: 8081
+        path: "/management"
         authKey: *customerApiKey
     bdrs:
       server:
