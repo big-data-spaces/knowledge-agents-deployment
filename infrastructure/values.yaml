@@ -321,7 +321,7 @@ consumer-agent:
         # -- The path mapping the "default" api is going to be exposed by
         path: "/matchmaking"
         # -- An optional regex path match (whose match groups could be used in an nginx-annotation of the ingress)
-        regex: /(matchmaking/.*)
+        regex: /(matchmaking.*)
     synchronization: 360000
     connectors: 
       BPNL000000000SM0: https://knowledge.int.catena-x.net/oem-edc-control/BPNL000000000SM0
