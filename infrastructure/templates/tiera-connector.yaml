@@ -357,8 +357,8 @@ data:
     web.http.default.path=/api
     web.http.public.port=8081
     web.http.public.path=/api/public
-    web.http.signaling.port=8083
-    web.http.signaling.path=/api/signaling
+    web.http.control.port=8083
+    web.http.control.path=/api/signaling
 
     web.http.callback.port=8187
     web.http.callback.path=/callback
