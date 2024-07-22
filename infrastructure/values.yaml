@@ -331,7 +331,9 @@ aas-bridge:
       sparql: http://oem-provider-agent:8082/sparql
   endpoints:
     default:
-      regex: ""
+      path: "/"
+      # -- An optional regex path match (whose match groups could be used in an nginx-annotation of the ingress)
+      regex: {}
   ingresses:
   - enabled: true
     hostname: *oemAasHost
