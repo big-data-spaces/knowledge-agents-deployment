@@ -264,9 +264,14 @@ consumer-agent-plane:
       BPNL00000003CQI9: https://consumer-connector.knowledge.int.catena-x.net
     services:
       # -- A regular expression which outgoing service URLs must match (unless overwritten by a specific asset property)
-      allow: '(https|(edcs?))://.*'
+      allow: '(https?|edcs?)://.*'
+      deny: ''
+      assets:
+        allow: '(https?|edcs?)://.*'
+        deny: ''
       connector:
         allow: 'https?://.*'
+        deny: ''
 
 consumer-agent:
   image:

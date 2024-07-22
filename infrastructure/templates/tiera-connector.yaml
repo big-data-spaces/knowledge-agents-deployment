@@ -416,6 +416,13 @@ data:
     cx.agent.controlplane.management=http://tiera-control-plane:8081/management
     cx.agent.callback=http://tiera-data-plane:8187/callback/transfer-process-started
     cx.agent.skill.contract.default=Contract?supplier=Skill
+    cx.agent.services.allow=(https?|edcs?)://.*
+    cx.agent.services.deny=
+    cx.agent.services.asset.allow=(https?|edcs?)://.*
+    cx.agent.services.asset.deny=
+    cx.agent.services.connector.allow=https?://.*
+    cx.agent.services.connector.deny=
+
 
     ###
     # Chapter Agent Catalogue
