@@ -14,7 +14,7 @@ dataspace:
   privateKeyAliasTier1: "tier1-daps-key"
   publicKeyAliasTier1: "tier1-daps-crt"
   dapsClientIdTier1: ""
-  bpnCustomer: &customerBpn BPNL00000003CQI9
+  bpnCustomer: &customerBpn BPNL000000000VJX
   didCustomer: &customerDid did:web:portal-backend.int.catena-x.net:api:administration:staticdata:did:BPNL00000003CQI9
   oauthCustomer: &customerOauth https://bpnl00000003cqi9-knowledge--agent--supplier.eu10.hana.ondemand.com/oauth/token
   clientCustomer: &customerOauthClient sb-ccdbb0a7-ab0f-4e78-b5eb-95d3a5d5ed2b!b458165|ica-production-dim-prod-eu10-004-prod-dis-cloud-approuter!b174292
@@ -281,6 +281,7 @@ consumer-agent:
     hostname: *customerAgentHost
     annotations:
       nginx.ingress.kubernetes.io/use-regex: "true"
+      nginx.ingress.kubernetes.io/rewrite-target: /$1
       nginx.org/mergeable-ingress-type: minion
     endpoints:
       - default
