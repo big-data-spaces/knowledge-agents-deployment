@@ -23,6 +23,6 @@ dependencies:
       version: "1.13.21-SNAPSHOT"
       repository: https://eclipse-tractusx.github.io/charts/dev
     - name: aas-bridge
-      version: "0.13.7-SNAPSHOT"
+      version: "1.13.7-SNAPSHOT"
       repository: https://eclipse-tractusx.github.io/charts/dev
 
