@@ -319,7 +319,7 @@ consumer-agent:
     endpoints:
       default:
         # -- The path mapping the "default" api is going to be exposed by
-        path: "/matchmaking/"
+        path: "/matchmaking"
         # -- An optional regex path match (whose match groups could be used in an nginx-annotation of the ingress)
         regex: /(matchmaking/.*)
     synchronization: 360000
