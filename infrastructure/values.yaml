@@ -265,6 +265,8 @@ consumer-agent-plane:
     services:
       # -- A regular expression which outgoing service URLs must match (unless overwritten by a specific asset property)
       allow: '(https|(edcs?))://.*'
+      connector:
+        allow: 'https?://.*'
 
 consumer-agent:
   image:
@@ -329,6 +331,8 @@ consumer-agent:
     services:
       # -- A regular expression which outgoing service URLs must match (unless overwritten by a specific asset property)
       allow: '(https|(edcs?))://.*'
+      connector:
+        allow: 'https?://.*'
 
 aas-bridge:
   image:
