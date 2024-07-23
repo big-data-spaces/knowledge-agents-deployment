@@ -261,7 +261,7 @@ consumer-agent-plane:
     synchronization: 360000
     connectors: 
       BPNL000000000SM0: https://knowledge.int.catena-x.net/oem-edc-control/BPNL000000000SM0
-      BPNL00000003CQI9: https://consumer-connector.knowledge.int.catena-x.net
+      BPNL000000000VJX: https://consumer-connector.knowledge.int.catena-x.net
     services:
       # -- A regular expression which outgoing service URLs must match (unless overwritten by a specific asset property)
       allow: '(https?|edcs?)://.*'
@@ -332,7 +332,7 @@ consumer-agent:
     synchronization: 360000
     connectors: 
       BPNL000000000SM0: https://knowledge.int.catena-x.net/oem-edc-control/BPNL000000000SM0
-      BPNL00000003CQI9: https://consumer-connector.knowledge.int.catena-x.net
+      BPNL000000000VJX: https://consumer-connector.knowledge.int.catena-x.net
     services:
       # -- A regular expression which outgoing service URLs must match (unless overwritten by a specific asset property)
       allow: '(https|(edcs?))://.*'
