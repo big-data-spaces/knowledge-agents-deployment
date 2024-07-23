@@ -47,7 +47,7 @@ bpnl:BPNL000000000TLB owl:sameAs bpnl:BPNL00000003B2OM;
                       cx-common:id  "BPNL000000000TLB"^^xsd:string;
                       cx-common:id  "BPNL00000003B2OM"^^xsd:string;                      
                       cx:hasConnector <edcs://knowledge.int.catena-x.net/tiera-edc-control/BPNL000000000TLB>;
-                      cx-common:hasConnector <edcs://knowledge.int.catena-x.net/oem-edc-control/BPNL000000000SM0>.
+                      cx-common:hasConnector <edcs://knowledge.int.catena-x.net/tiera-edc-control/BPNL000000000TLB>.
 
 bpnl:BPNL000000000VJX owl:sameAs bpnl:BPNL00000007OR16;
                       owl:sameAs bpnl:BPNL00000002HCQ9;
