@@ -271,7 +271,7 @@ consumer-agent-plane:
         deny: ''
       connector:
         allow: 'https?://.*'
-        deny: ''
+        deny: '^$'
 
 consumer-agent:
   image:
@@ -338,6 +338,7 @@ consumer-agent:
       allow: '(https|(edcs?))://.*'
       connector:
         allow: 'https?://.*'
+        deny: '^$'
 
 aas-bridge:
   image:
