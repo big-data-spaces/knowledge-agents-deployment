@@ -16,7 +16,7 @@ dataspace:
   dapsClientIdTier1: ""
   bpnCustomer: &customerBpn BPNL000000000VJX
   didCustomer: &customerDid did:web:portal-backend.int.catena-x.net:api:administration:staticdata:did:BPNL000000000VJX
-  oauthCustomer: &customerOauth https://bpnl00000003cqi9-knowledge--agent--supplier.eu10.hana.ondemand.com/oauth/token
+  oauthCustomer: &customerOauth https://bpnl00000003cqi9-knowledge--agent--consumer.eu10.hana.ondemand.com/oauth/token
   clientCustomer: &customerOauthClient sb-5f180bf6-9745-4b2f-a305-1b69b9c16c83!b497188|ica-production-dim-prod-eu10-004-prod-dis-cloud-approuter!b174292
   secretCustomer: &customerOauthSecret sts-consumer-secret
   dbCustomerUrl: &customerDbUrl "jdbc:postgresql://postgresql:5432/consumer"
@@ -121,6 +121,7 @@ consumer-connector:
     id: *customerDid
     trustedIssuers:
     - did:web:dim-static-prod.dis-cloud-prod.cfapps.eu10-004.hana.ondemand.com:dim-hosted:2f45795c-d6cc-4038-96c9-63cedc0cd266:holder-iatp
+    - did:web:portal-backend.int.catena-x.net:api:administration:staticdata:did:BPNL00000003CRHK
     sts:
       dim:
         url: https://dis-integration-service-prod.eu10.dim.cloud.sap/api/v2.0.0/iatp/catena-x-portal

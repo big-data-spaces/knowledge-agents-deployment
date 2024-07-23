@@ -71,7 +71,8 @@ data:
     ###
 
     edc.iam.trusted-issuer.catena.id=did:web:dim-static-prod.dis-cloud-prod.cfapps.eu10-004.hana.ondemand.com:dim-hosted:2f45795c-d6cc-4038-96c9-63cedc0cd266:holder-iatp
-    edc.iam.sts.oauth.token.url=https://BPNL000000000SM0-knowledge--agents--manufacturer--ag.authentication.eu10.hana.ondemand.com/oauth/token
+    edc.iam.trusted-issuer.assoc.id=did:web:portal-backend.int.catena-x.net:api:administration:staticdata:did:BPNL00000003CRHK
+    edc.iam.sts.oauth.token.url=https://bpnl000000000sm0-knowledge--agent--manufacturer.authentication.eu10.hana.ondemand.com/oauth/token
     edc.iam.sts.oauth.client.id={{ .Values.dataspace.miwClientOem }}
     edc.iam.sts.oauth.client.secret.alias=sts-oem-secret
     edc.iam.sts.dim.url=https://dis-integration-service-prod.eu10.dim.cloud.sap/api/v2.0.0/iatp/catena-x-portal
@@ -202,7 +203,8 @@ data:
     ###
 
     edc.iam.trusted-issuer.catena.id=did:web:dim-static-prod.dis-cloud-prod.cfapps.eu10-004.hana.ondemand.com:dim-hosted:2f45795c-d6cc-4038-96c9-63cedc0cd266:holder-iatp
-    edc.iam.sts.oauth.token.url=https://BPNL000000000SM0-knowledge--agents--manufacturer--ag.authentication.eu10.hana.ondemand.com/oauth/token
+    edc.iam.trusted-issuer.assoc.id=did:web:portal-backend.int.catena-x.net:api:administration:staticdata:did:BPNL00000003CRHK
+    edc.iam.sts.oauth.token.url=https://bpnl000000000sm0-knowledge--agent--manufacturer.authentication.eu10.hana.ondemand.com/oauth/token
     edc.iam.sts.oauth.client.id={{ .Values.dataspace.miwClientOem }}
     edc.iam.sts.oauth.client.secret.alias=sts-oem-secret
     edc.iam.sts.dim.url=https://dis-integration-service-prod.eu10.dim.cloud.sap/api/v2.0.0/iatp/catena-x-portal
@@ -709,7 +711,8 @@ data:
     ###
 
     edc.iam.trusted-issuer.catena.id=did:web:dim-static-prod.dis-cloud-prod.cfapps.eu10-004.hana.ondemand.com:dim-hosted:2f45795c-d6cc-4038-96c9-63cedc0cd266:holder-iatp
-    edc.iam.sts.oauth.token.url=https://BPNL000000000SM0-knowledge--agents--manufacturer.authentication.eu10.hana.ondemand.com/oauth/token
+    edc.iam.trusted-issuer.assoc.id=did:web:portal-backend.int.catena-x.net:api:administration:staticdata:did:BPNL00000003CRHK
+    edc.iam.sts.oauth.token.url=https://bpnl000000000sm0-knowledge--agent--manufacturer.authentication.eu10.hana.ondemand.com/oauth/token
     edc.iam.sts.oauth.client.id={{ .Values.dataspace.miwClientOem }}
     edc.iam.sts.oauth.client.secret.alias=sts-oem-secret
     edc.iam.sts.dim.url=https://dis-integration-service-prod.eu10.dim.cloud.sap/api/v2.0.0/iatp/catena-x-portal
