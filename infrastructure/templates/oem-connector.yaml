@@ -18,7 +18,7 @@ data:
     edc.hostname={{ .Values.ingress.host }}
 
     edc.participant.id={{ .Values.dataspace.bpnOem }}
-    edc.iam.issuer.id=did:web:portal-backend.int.demo.catena-x.net:api:administration:staticdata:did:{{ .Values.dataspace.bpnOem }}
+    edc.iam.issuer.id=did:web:portal-backend.int.catena-x.net:api:administration:staticdata:did:{{ .Values.dataspace.bpnOem }}
 
     ###
     # Chapter Web Server / Ports
@@ -76,7 +76,7 @@ data:
     edc.iam.sts.oauth.client.id={{ .Values.dataspace.miwClientOem }}
     edc.iam.sts.oauth.client.secret.alias=sts-oem-secret
     edc.iam.sts.dim.url=https://dis-integration-service-prod.eu10.dim.cloud.sap/api/v2.0.0/iatp/catena-x-portal
-    tx.iam.iatp.bdrs.server.url=https://bpn-did-resolution-service.int.demo.catena-x.net/api/directory
+    tx.iam.iatp.bdrs.server.url=https://bpn-did-resolution-service.int.catena-x.net/api/directory
     tx.iam.iatp.bdrs.cache.validity=600
 
     ###
@@ -150,7 +150,7 @@ data:
     edc.hostname={{ .Values.ingress.host }}
 
     edc.participant.id={{ .Values.dataspace.bpnOem }}
-    edc.iam.issuer.id=did:web:portal-backend.int.demo.catena-x.net:api:administration:staticdata:did:{{ .Values.dataspace.bpnOem }}
+    edc.iam.issuer.id=did:web:portal-backend.int.catena-x.net:api:administration:staticdata:did:{{ .Values.dataspace.bpnOem }}
 
     ###
     # Chapter Web Server / Ports
@@ -208,7 +208,7 @@ data:
     edc.iam.sts.oauth.client.id={{ .Values.dataspace.miwClientOem }}
     edc.iam.sts.oauth.client.secret.alias=sts-oem-secret
     edc.iam.sts.dim.url=https://dis-integration-service-prod.eu10.dim.cloud.sap/api/v2.0.0/iatp/catena-x-portal
-    tx.iam.iatp.bdrs.server.url=https://bpn-did-resolution-service.int.demo.catena-x.net/api/directory
+    tx.iam.iatp.bdrs.server.url=https://bpn-did-resolution-service.int.catena-x.net/api/directory
     tx.iam.iatp.bdrs.cache.validity=600
 
     ###
@@ -663,7 +663,7 @@ data:
     edc.hostname={{ .Values.ingress.host }}
     
     edc.participant.id={{ .Values.dataspace.bpnOem }}
-    edc.iam.issuer.id=did:web:portal-backend.int.demo.catena-x.net:api:administration:staticdata:did:{{ .Values.dataspace.bpnOem }}
+    edc.iam.issuer.id=did:web:portal-backend.int.catena-x.net:api:administration:staticdata:did:{{ .Values.dataspace.bpnOem }}
 
     ###
     # Chapter Web Server / Ports

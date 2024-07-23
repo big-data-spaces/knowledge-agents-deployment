@@ -17,7 +17,7 @@ data:
     edc.hostname={{ .Values.ingress.host }}
     
     edc.participant.id={{ .Values.dataspace.bpnTier1 }}
-    edc.iam.issuer.id=did:web:portal-backend.int.demo.catena-x.net:api:administration:staticdata:did:{{ .Values.dataspace.bpnTier1 }}
+    edc.iam.issuer.id=did:web:portal-backend.int.catena-x.net:api:administration:staticdata:did:{{ .Values.dataspace.bpnTier1 }}
 
     ###
     # Chapter Web Server / Ports
@@ -75,7 +75,7 @@ data:
     edc.iam.sts.oauth.client.id={{ .Values.dataspace.miwClientTier1 }}
     edc.iam.sts.oauth.client.secret.alias=sts-supplier-secret
     edc.iam.sts.dim.url=https://dis-integration-service-prod.eu10.dim.cloud.sap/api/v2.0.0/iatp/catena-x-portal
-    tx.iam.iatp.bdrs.server.url=https://bpn-did-resolution-service.int.demo.catena-x.net/api/directory
+    tx.iam.iatp.bdrs.server.url=https://bpn-did-resolution-service.int.catena-x.net/api/directory
     tx.iam.iatp.bdrs.cache.validity=600
 
     ###
@@ -386,7 +386,7 @@ data:
 
     # Configure a flexible (JWT-based) Application-Side Authentication
     tractusx.auth.agent.type=jwt
-    tractusx.auth.agent.publickey=https://centralidp.int.demo.catena-x.net/auth/realms/CX-Central/protocol/openid-connect/certs
+    tractusx.auth.agent.publickey=https://centralidp.int.catena-x.net/auth/realms/CX-Central/protocol/openid-connect/certs
     tractusx.auth.agent.register=true
     tractusx.auth.agent.checkexpiry=false
     tractusx.auth.agent.paths=default

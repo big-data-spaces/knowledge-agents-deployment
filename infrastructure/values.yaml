@@ -49,7 +49,6 @@ security:
   backupsShare: ""
   authType: ""
   xApiKey: &customerApiKey "foo"
-  dapsUrl: "https://daps1.int.demo.catena-x.net"
   vaultUrl: ""
   vaultToken: ""
   backendUser: ""
