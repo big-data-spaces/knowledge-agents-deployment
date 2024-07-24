@@ -24,5 +24,5 @@ dependencies:
       repository: https://big-data-spaces.github.io/knowledge-agents-deployment/infrastructure
     - name: aas-bridge
       version: "1.13.7-SNAPSHOT"
-      repository: https://big-data-spaces.github.io/knowledge-agents-deployment/infrastructure
+      repository: https://eclipse-tractusx.github.io/charts/dev
 
