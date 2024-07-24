@@ -370,11 +370,10 @@ aas-bridge:
     registry: tractusx/
     repository: aas-bridge
     tag: 1.13.7-SNAPSHOT
-    aas:
+  aas:
     persistence:
       # -- The default sparql server is embedded
       sparql: http://oem-provider-agent:8082/sparql
-  aas:
     endpoints:
       default:
         path: "/"
