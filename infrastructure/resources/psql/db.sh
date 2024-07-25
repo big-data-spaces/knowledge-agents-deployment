@@ -17,6 +17,9 @@ set -e
 psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" <<-EOSQL
     CREATE DATABASE rawdata;
     CREATE DATABASE rul;
+    CREATE DATABASE keycloak;
+    CREATE USER keycloak WITH ENCRYPTED PASSWORD 'password';
+    GRANT ALL PRIVILEGES ON DATABASE keycloak TO keycloak;
     CREATE USER rawdata_user WITH ENCRYPTED PASSWORD '$SACRED';
     GRANT ALL PRIVILEGES ON DATABASE rawdata TO rawdata_user;
     CREATE USER rul_user WITH ENCRYPTED PASSWORD '$SACRED';
@@ -24,8 +27,6 @@ psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" <<-E
     CREATE DATABASE $POSTGRES_DB_NAME_MIW;
     CREATE USER $POSTGRES_USERNAME_MIW WITH ENCRYPTED PASSWORD '$SACRED';
     GRANT ALL PRIVILEGES ON DATABASE $POSTGRES_DB_NAME_MIW TO $POSTGRES_USERNAME_MIW;
-    \c $POSTGRES_DB_NAME_MIW
-    GRANT ALL ON SCHEMA public TO $POSTGRES_USERNAME_MIW;
     CREATE DATABASE oem;
     CREATE DATABASE oem2;
     CREATE DATABASE tiera;
@@ -46,6 +47,10 @@ psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" <<-E
     GRANT ALL ON SCHEMA public TO tiera_user;
     \c consumer
     GRANT ALL ON SCHEMA public TO consumer_user;
+    \c keycloak
+    GRANT ALL ON SCHEMA public TO keycloak;
+    \c $POSTGRES_DB_NAME_MIW
+    GRANT ALL ON SCHEMA public TO $POSTGRES_USERNAME_MIW;
 EOSQL
 
 psql --username "$POSTGRES_USER" --dbname "rawdata" </tmp/data/20230126_rawdata_db_dump.sql

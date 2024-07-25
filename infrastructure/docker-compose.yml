@@ -226,8 +226,8 @@ services:
   ###
   # A conformity-testing binding agent
   conforming-agent:
-    image: ghcr.io/catenax-ng/tx-knowledge-agents/conforming-agent:1.12.19-SNAPSHOT
-#    image: tractusx/conforming-agent:1.12.19-SNAPSHOT
+#    image: ghcr.io/catenax-ng/tx-knowledge-agents/conforming-agent:1.13.22-SNAPSHOT
+    image: tractusx/conforming-agent:1.13.22-SNAPSHOT
     platform: ${DOCKER_PLATFORM:-linux/amd64}
     environment:
       # Uncomment to enable for debugging, please choose a different port for each endpoint
@@ -240,8 +240,8 @@ services:
   # A data provisioning agent
   #
   provider-agent:
-    image: ghcr.io/catenax-ng/tx-knowledge-agents/provisioning-agent:1.12.19-SNAPSHOT
-#    image: tractusx/provisioning-agent:1.12.19-SNAPSHOT
+#    image: ghcr.io/catenax-ng/tx-knowledge-agents/provisioning-agent:1.13.22-SNAPSHOT
+    image: tractusx/provisioning-agent:1.13.22-SNAPSHOT
     platform: ${DOCKER_PLATFORM:-linux/amd64}
     ports:
       - "8080:8080" # sparql endpoint
@@ -287,8 +287,8 @@ services:
   ###
   # A function providing agent
   tiera-remoting-agent:
-    image: ghcr.io/catenax-ng/tx-knowledge-agents/remoting-agent:1.12.19-SNAPSHOT
-#    image: tractusx/remoting-agent:1.12.19-SNAPSHOT
+#    image: ghcr.io/catenax-ng/tx-knowledge-agents/remoting-agent:1.13.22-SNAPSHOT
+    image: tractusx/remoting-agent:1.13.22-SNAPSHOT
     read_only: true
     platform: ${DOCKER_PLATFORM:-linux/amd64}
     ports:
@@ -313,7 +313,8 @@ services:
   ###
   # Bridge from provising agent to AAS API
   aas-bridge:
-    image: ghcr.io/catenax-ng/tx-knowledge-agents-aas-bridge/aas-bridge:0.13.6-SNAPSHOT
+ #   image: ghcr.io/catenax-ng/tx-knowledge-agents-aas-bridge/aas-bridge:1.13.7-SNAPSHOT
+    image: tractusx/aas-bridge:1.13.7-SNAPSHOT
     platform: ${DOCKER_PLATFORM:-linux/amd64}
     ports:
       - "8700:8443" # AAS-API
@@ -422,10 +423,10 @@ services:
   ###
   # Configures the OEM data plane
   oem-data-plane:
-#    image: ghcr.io/catenax-ng/tx-knowledge-agents-edc/agentplane-hashicorp:1.13.20-SNAPSHOT
-#    image: ghcr.io/catenax-ng/tx-knowledge-agents-edc/agentplane-azure-vault:1.13.20-SNAPSHOT
-#    image: tractusx/agentplane-azure-vault:1.13.20-SNAPSHOT
-    image: tractusx/agentplane-hashicorp:1.13.20-SNAPSHOT
+#    image: ghcr.io/catenax-ng/tx-knowledge-agents-edc/agentplane-hashicorp:1.13.22-SNAPSHOT
+#    image: ghcr.io/catenax-ng/tx-knowledge-agents-edc/agentplane-azure-vault:1.13.22-SNAPSHOT
+#    image: tractusx/agentplane-azure-vault:1.13.22-SNAPSHOT
+    image: tractusx/agentplane-hashicorp:1.13.22-SNAPSHOT
     platform: ${DOCKER_PLATFORM:-linux/amd64}
     ports:
       - "8102:8080"  # API/sparql endpoint
@@ -444,7 +445,7 @@ services:
       JAVA_TOOL_OPTIONS: -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:4040
     volumes:
       - ./oem/resources/dataplane.properties:/app/configuration.properties
-       - ./resources/dataspace_local.ttl:/app/dataspace.ttl
+      - ./resources/dataspace_local.ttl:/app/dataspace.ttl
       - ./resources/opentelemetry.properties:/app/opentelemetry.properties
       - ./resources/logging.properties:/app/logging.properties
     depends_on:
@@ -510,9 +511,9 @@ services:
   ###
   # Configures the supplier data plane
   tiera-data-plane:
-#    image: ghcr.io/catenax-ng/tx-knowledge-agents-edc/agentplane-hashicorp:1.13.20-SNAPSHOT
-#    image: ghcr.io/catenax-ng/tx-knowledge-agents-edc/agentplane-azure-vault:1.13.20-SNAPSHOT
-    image: tractusx/agentplane-hashicorp:1.13.20-SNAPSHOT
+#    image: ghcr.io/catenax-ng/tx-knowledge-agents-edc/agentplane-hashicorp:1.13.22-SNAPSHOT
+#    image: ghcr.io/catenax-ng/tx-knowledge-agents-edc/agentplane-azure-vault:1.13.22-SNAPSHOT
+    image: tractusx/agentplane-hashicorp:1.13.22-SNAPSHOT
     platform: ${DOCKER_PLATFORM:-linux/amd64}
     ports:
       - "8400:8080"  # API/sparql endpoint
@@ -595,10 +596,10 @@ services:
   ###
   # Configures the consumer data plane
   consumer-data-plane:
-#    image: ghcr.io/catenax-ng/tx-knowledge-agents-edc/agentplane-azure-vault:1.13.20-SNAPSHOT
-#    image: ghcr.io/catenax-ng/tx-knowledge-agents-edc/agentplane-hashicorp:1.13.20-SNAPSHOT
-#    image: tractusx/edc-dataplane-azure-vault:0.7.2
-    image: tractusx/agentplane-hashicorp:1.13.20-SNAPSHOT
+#    image: ghcr.io/catenax-ng/tx-knowledge-agents-edc/agentplane-azure-vault:1.13.22-SNAPSHOT
+#    image: ghcr.io/catenax-ng/tx-knowledge-agents-edc/agentplane-hashicorp:1.13.22-SNAPSHOT
+#    image: tractusx/edc-dataplane-azure-vault:0.7.3
+    image: tractusx/agentplane-hashicorp:1.13.22-SNAPSHOT
     platform: ${DOCKER_PLATFORM:-linux/amd64}
     ports:
       - "8600:8080"  # API/sparql endpoint
@@ -614,7 +615,7 @@ services:
       # If you want to enable multiple endpoints, simply list them with spaces, like ONTOP_PORT: 8080 8082
       EDC_FS_CONFIG: /app/configuration.properties      
       # Uncomment to enable for debugging, please choose a different port for each endpoint
-      JAVA_TOOL_OPTIONS: -agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=*:4040
+      JAVA_TOOL_OPTIONS: -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:4040
     volumes:
       - ./consumer/resources/dataplane.properties:/app/configuration.properties
       - ./resources/dataspace_local.ttl:/app/dataspace.ttl
@@ -648,7 +649,7 @@ services:
       - "8604:8080"  # Agent Source
       - "8605:8187"  # AGREEMENT CALLBACK
       - "8606:8082"  # Public Sparql
-      - "4048:4040"  # DEBUG
+      - "4049:4040"  # DEBUG
     environment:
       # If you want to enable multiple endpoints, simply list them with spaces, like ONTOP_PORT: 8080 8082
       EDC_FS_CONFIG: /app/configuration.properties      

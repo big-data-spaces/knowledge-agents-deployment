@@ -27,6 +27,6 @@ cat /data/cert.xxx | vault kv put secret/tier1-daps-cert content=-
 cat /data/key.xxx | vault kv put secret/tier1-daps-key content=-
 
 vault kv put secret/symmetric-key content='c3ltbWV0cmljCg=='
-vault kv put secret/sts-oem-secret content='xxx'
-vault kv put secret/sts-supplier-secret content='xxx'
-vault kv put secret/sts-consumer-secret content='xxx'
+vault kv put secret/sts-oem-secret content='miw_private_client'
+vault kv put secret/sts-supplier-secret content='miw_private_client'
+vault kv put secret/sts-consumer-secret content='miw_private_client'
