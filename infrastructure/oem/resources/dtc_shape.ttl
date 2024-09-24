@@ -10,7 +10,7 @@ OemDTC rdf:type sh:NodeShape ;
   sh:targetClass cx-diag:DTC ;
   sh:property [
         sh:path cx:provisionedBy ;
-        sh:hasValue <https://github.com/catenax-ng/product-knowledge/ontology/cx.ttl#BusinessPartner/BPNL00000003COJN> ;
+        sh:hasValue <https://github.com/catenax-ng/product-knowledge/ontology/cx.ttl#BusinessPartner/BPNL000000000SM0> ;
     ] ;
   sh:property [
         sh:path cx-diag:Version ;
@@ -25,5 +25,5 @@ OemDiagnosedParts rdf:type sh:NodeShape ;
   sh:targetClass cx-diag:DiagnosedPart ;
   sh:property [
         sh:path cx:provisionedBy ;
-        sh:hasValue <https://github.com/catenax-ng/product-knowledge/ontology/cx.ttl#BusinessPartner/BPNL00000003COJN> ;
+        sh:hasValue <https://github.com/catenax-ng/product-knowledge/ontology/cx.ttl#BusinessPartner/BPNL000000000SM0> ;
     ] ;

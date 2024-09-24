@@ -1050,7 +1050,7 @@
           "protocolMapper": "oidc-hardcoded-claim-mapper",
           "consentRequired": false,
           "config": {
-            "claim.value": "BPNL00000003CQI9",
+            "claim.value": "BPNL000000000VJX",
             "userinfo.token.claim": "true",
             "id.token.claim": "true",
             "access.token.claim": "true",
@@ -1193,7 +1193,7 @@
           "protocolMapper": "oidc-hardcoded-claim-mapper",
           "consentRequired": false,
           "config": {
-            "claim.value": "BPNL00000003COJN",
+            "claim.value": "BPNL000000000SM0",
             "userinfo.token.claim": "true",
             "id.token.claim": "true",
             "access.token.claim": "true",
@@ -1336,7 +1336,7 @@
           "protocolMapper": "oidc-hardcoded-claim-mapper",
           "consentRequired": false,
           "config": {
-            "claim.value": "BPNL00000003CPIY",
+            "claim.value": "BPNL000000000TLB",
             "userinfo.token.claim": "true",
             "id.token.claim": "true",
             "access.token.claim": "true",

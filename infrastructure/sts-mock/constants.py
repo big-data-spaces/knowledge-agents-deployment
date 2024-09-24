@@ -51,19 +51,19 @@ DID_DICT = {
         "did_resolve_name": "trusted-issuer",
     },
     DID_OEM: {
-        "bpnl": "BPNL00000003COJN",
+        "bpnl": "BPNL000000000SM0",
         "did_resolve_name": "oem",
         "kid_vault": "oem-cert",
         "private_key": OEM_PRIVATE_KEY,
     },
     DID_SUPPLIER: {
-        "bpnl": "BPNL00000003CPIY",
+        "bpnl": "BPNL000000000TLB",
         "did_resolve_name": "supplier",
         "kid_vault": "supplier-cert",
         "private_key": OEM_PRIVATE_KEY,
     },
     DID_CONSUMER: {
-        "bpnl": "BPNL00000003CQI9",
+        "bpnl": "BPNL000000000VJX",
         "did_resolve_name": "consumer",
         "kid_vault": "consumer-cert",
         "private_key": OEM_PRIVATE_KEY,

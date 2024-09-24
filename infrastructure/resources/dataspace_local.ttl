@@ -37,8 +37,8 @@ bpnl:BPNL000000000SM0 owl:sameAs bpnl:BPNL00000003AYRE;
                       cx:isIssuerOfVehicleIdentificationNumber "WBAAL31029PZ00001"^^xsd:string;
                       cx:isIssuerOfVehicleIdentificationNumber "WBAAL31029PZ00002"^^xsd:string;
                       cx:isIssuerOfVehicleIdentificationNumber "WBAAL31029PZ00003"^^xsd:string;
-                      cx:hasConnector <edc://oem-control-plane:8282>;
-                      cx-common:hasConnector <edc://oem-control-plane:8282>.
+                      cx:hasConnector <edc://oem-control-plane:8084>;
+                      cx-common:hasConnector <edc://oem-control-plane:8084>.
                       
 
 bpnl:BPNL000000000TLB owl:sameAs bpnl:BPNL00000003B2OM;
@@ -46,19 +46,19 @@ bpnl:BPNL000000000TLB owl:sameAs bpnl:BPNL00000003B2OM;
                       cx:hasBusinessPartnerNumber "BPNL00000003B2OM"^^xsd:string;
                       cx-common:id  "BPNL000000000TLB"^^xsd:string;
                       cx-common:id  "BPNL00000003B2OM"^^xsd:string;
-                      cx:hasConnector <edc://tiera-control-plane:8282>;
-                      cx-common:hasConnector <edc://tiera-control-plane:8282>.
+                      cx:hasConnector <edc://tiera-control-plane:8084>;
+                      cx-common:hasConnector <edc://tiera-control-plane:8084>.
 
-bpnl:BPNL00000003CQI9 owl:sameAs bpnl:BPNL00000007OR16;
+bpnl:BPNL000000000VJX owl:sameAs bpnl:BPNL00000007OR16;
                       owl:sameAs bpnl:BPNL00000002HCQ9;
-                      cx:hasBusinessPartnerNumber "BPNL00000003CQI9"^^xsd:string;
+                      cx:hasBusinessPartnerNumber "BPNL000000000VJX"^^xsd:string;
                       cx:hasBusinessPartnerNumber "BPNL00000007OR16"^^xsd:string;
                       cx:hasBusinessPartnerNumber "BPNL00000002HCQ9"^^xsd:string;
-                      cx-common:id "BPNL00000003CQI9"^^xsd:string;
+                      cx-common:id "BPNL000000000VJX"^^xsd:string;
                       cx-common:id "BPNL00000007OR16"^^xsd:string;
                       cx-common:id "BPNL00000002HCQ9"^^xsd:string;
-                      cx:hasConnector <edc://consumer-control-plane:8282>;
-                      cx-common:hasConnector <edc://consumer-control-plane:8282>.
+                      cx:hasConnector <edc://consumer-control-plane:8084>;
+                      cx-common:hasConnector <edc://consumer-control-plane:8084>.
 
 bpnl:BPNL00000003AXS3 cx-common:hasSite bpns:BPNS00000003AXS3.
 bpnl:BPNL00000003B0Q0 cx-common:hasSite bpns:BPNS00000003B0Q0.
