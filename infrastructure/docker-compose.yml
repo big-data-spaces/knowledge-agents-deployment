@@ -227,7 +227,7 @@ services:
   # A conformity-testing binding agent
   conforming-agent:
 #    image: ghcr.io/catenax-ng/tx-knowledge-agents/conforming-agent:1.13.22-SNAPSHOT
-    image: tractusx/conforming-agent:1.13.22-SNAPSHOT
+    image: tractusx/conforming-agent:1.13.22
     platform: ${DOCKER_PLATFORM:-linux/amd64}
     environment:
       # Uncomment to enable for debugging, please choose a different port for each endpoint
@@ -241,7 +241,7 @@ services:
   #
   provider-agent:
 #    image: ghcr.io/catenax-ng/tx-knowledge-agents/provisioning-agent:1.13.22-SNAPSHOT
-    image: tractusx/provisioning-agent:1.13.22-SNAPSHOT
+    image: tractusx/provisioning-agent:1.13.22
     platform: ${DOCKER_PLATFORM:-linux/amd64}
     ports:
       - "8080:8080" # sparql endpoint
@@ -288,7 +288,7 @@ services:
   # A function providing agent
   tiera-remoting-agent:
 #    image: ghcr.io/catenax-ng/tx-knowledge-agents/remoting-agent:1.13.22-SNAPSHOT
-    image: tractusx/remoting-agent:1.13.22-SNAPSHOT
+    image: tractusx/remoting-agent:1.13.22
     read_only: true
     platform: ${DOCKER_PLATFORM:-linux/amd64}
     ports:
@@ -314,7 +314,7 @@ services:
   # Bridge from provising agent to AAS API
   aas-bridge:
  #   image: ghcr.io/catenax-ng/tx-knowledge-agents-aas-bridge/aas-bridge:1.13.7-SNAPSHOT
-    image: tractusx/aas-bridge:1.13.7-SNAPSHOT
+    image: tractusx/aas-bridge:1.13
     platform: ${DOCKER_PLATFORM:-linux/amd64}
     ports:
       - "8700:8443" # AAS-API
@@ -426,7 +426,7 @@ services:
 #    image: ghcr.io/catenax-ng/tx-knowledge-agents-edc/agentplane-hashicorp:1.13.22-SNAPSHOT
 #    image: ghcr.io/catenax-ng/tx-knowledge-agents-edc/agentplane-azure-vault:1.13.22-SNAPSHOT
 #    image: tractusx/agentplane-azure-vault:1.13.22-SNAPSHOT
-    image: tractusx/agentplane-hashicorp:1.13.22-SNAPSHOT
+    image: tractusx/agentplane-hashicorp:1.13
     platform: ${DOCKER_PLATFORM:-linux/amd64}
     ports:
       - "8102:8080"  # API/sparql endpoint
@@ -599,7 +599,7 @@ services:
 #    image: ghcr.io/catenax-ng/tx-knowledge-agents-edc/agentplane-azure-vault:1.13.22-SNAPSHOT
 #    image: ghcr.io/catenax-ng/tx-knowledge-agents-edc/agentplane-hashicorp:1.13.22-SNAPSHOT
 #    image: tractusx/edc-dataplane-azure-vault:0.7.3
-    image: tractusx/agentplane-hashicorp:1.13.22-SNAPSHOT
+    image: tractusx/agentplane-hashicorp:1.13
     platform: ${DOCKER_PLATFORM:-linux/amd64}
     ports:
       - "8600:8080"  # API/sparql endpoint
@@ -642,8 +642,8 @@ services:
   ###
   # Configures the consumer matchmaking agent
   consumer-agent:
-    image: ghcr.io/catenax-ng/tx-knowledge-agents/matchmaking-agent:1.12.19-SNAPSHOT
-#    image: tractusx/agentplane-hashicorp:1.12.19-SNAPSHOT
+#    image: ghcr.io/catenax-ng/tx-knowledge-agents/matchmaking-agent:1.12.19-SNAPSHOT
+    image: tractusx/matchmaking-agent:1.13
     platform: ${DOCKER_PLATFORM:-linux/amd64}
     ports:
       - "8604:8080"  # Agent Source

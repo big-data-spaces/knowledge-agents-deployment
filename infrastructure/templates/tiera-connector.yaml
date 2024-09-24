@@ -199,8 +199,8 @@ spec:
               value: {{ .Values.security.vaultTenant }}
           resources:
             requests:
-              cpu: 500m
-              memory: 512Mi
+              cpu: 250m
+              memory: 256Mi
             limits:
               cpu: 500m
               memory: 512Mi
@@ -517,8 +517,8 @@ spec:
               value: {{ .Values.security.vaultTenant }}
           resources:
            requests:
-            cpu: 500m
-            memory: 512Mi
+            cpu: 250m
+            memory: 256Mi
            limits:
             cpu: 500m
             memory: 512Mi

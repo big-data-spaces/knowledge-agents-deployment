@@ -138,6 +138,17 @@ consumer-connector:
   vault: 
     azure: *azureVault
   controlplane: &consumerControlPlane
+    resources:
+      limits:
+        # -- Maximum CPU limit
+        cpu: 500m
+        # -- Maximum memory limit
+        memory: 512Mi
+      requests:
+        # -- Initial CPU request
+        cpu: 250m
+        # -- Initial memory request
+        memory: 256Mi
     endpoints:
       control:
         port: 8083
@@ -174,6 +185,17 @@ consumer-connector:
       EDC_VAULT_URL_OVERRIDE_UNSAFE: false
       EDC_IAM_TRUSTED-ISSUER_0-ISSUER_ID: did:web:dim-static-prod.dis-cloud-prod.cfapps.eu10-004.hana.ondemand.com:dim-hosted:2f45795c-d6cc-4038-96c9-63cedc0cd266:holder-iatp
   dataplane:
+    resources:
+      limits:
+        # -- Maximum CPU limit
+        cpu: 500m
+        # -- Maximum memory limit
+        memory: 512Mi
+      requests:
+        # -- Initial CPU request
+        cpu: 250m
+        # -- Initial memory request
+        memory: 256Mi
     token:
       signer:
         privatekey_alias: *customerTokenKey
@@ -187,6 +209,17 @@ consumer-connector:
 consumer-agent-plane:
   image:
     repository: tractusx/agentplane-azure-vault
+  resources:
+    limits:
+      # -- Maximum CPU limit
+      cpu: 500m
+      # -- Maximum memory limit
+      memory: 512Mi
+    requests:
+      # -- Initial CPU request
+      cpu: 250m
+      # -- Initial memory request
+      memory: 256Mi
   url: 
     public: ""
   participant:
@@ -289,6 +322,17 @@ consumer-agent:
   image:
     registry: tractusx/
     repository: matchmaking-agent
+  resources:
+    limits:
+      # -- Maximum CPU limit
+      cpu: 500m
+      # -- Maximum memory limit
+      memory: 512Mi
+    requests:
+      # -- Initial CPU request
+      cpu: 250m
+      # -- Initial memory request
+      memory: 256Mi
   url: 
     public: ""
   participant:
@@ -370,6 +414,17 @@ aas-bridge:
     registry: tractusx/
     repository: aas-bridge
     tag: 1.13.7-SNAPSHOT
+  resources:
+    limits:
+      # -- Maximum CPU limit
+      cpu: 500m
+      # -- Maximum memory limit
+      memory: 512Mi
+    requests:
+      # -- Initial CPU request
+      cpu: 250m
+      # -- Initial memory request
+      memory: 256Mi
   aas:
     persistence:
       # -- The default sparql server is embedded

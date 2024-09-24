@@ -129,8 +129,8 @@ spec:
             - containerPort: 8084 # RUL
           resources:
            requests:
-            cpu: 500m
-            memory: 1536Mi
+            cpu: 250m
+            memory: 768Mi
            limits:
             cpu: 500m
             memory: 1536Mi

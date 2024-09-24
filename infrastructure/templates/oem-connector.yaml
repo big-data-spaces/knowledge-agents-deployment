@@ -332,12 +332,12 @@ spec:
             - name: AZURE_TENANT_ID
               value: {{ .Values.security.vaultTenant }}
           resources:
-           requests:
-            cpu: 500m
-            memory: 512Mi
            limits:
             cpu: 500m
             memory: 512Mi
+           requests:
+            cpu: 250m
+            memory: 256Mi
           startupProbe:
             failureThreshold: 17
             httpGet:
@@ -514,12 +514,12 @@ spec:
             - name: AZURE_TENANT_ID
               value: {{ .Values.security.vaultTenant }}
           resources:
-            requests:
-              cpu: 500m
-              memory: 512Mi
             limits:
               cpu: 500m
               memory: 512Mi
+            requests:
+              cpu: 250m
+              memory: 256Mi
           startupProbe:
             failureThreshold: 17
             httpGet:
@@ -830,12 +830,12 @@ spec:
             - name: AZURE_TENANT_ID
               value: {{ .Values.security.vaultTenant }}
           resources:
-            requests:
-              cpu: 500m
-              memory: 512Mi
             limits:
               cpu: 500m
               memory: 512Mi
+            requests:
+              cpu: 250m
+              memory: 256Mi
           startupProbe:
             failureThreshold: 17
             httpGet:

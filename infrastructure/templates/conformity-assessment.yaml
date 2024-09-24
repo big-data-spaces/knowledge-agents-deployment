@@ -54,12 +54,12 @@ spec:
           ports:
             - containerPort: 8080 # Sparql-Profiles
           resources:
-           requests:
-            cpu: 200m
-            memory: "0.2Gi"
            limits:
             cpu: 200m
             memory: "0.2Gi"
+           requests:
+            cpu: 100m
+            memory: "0.1Gi"
           startupProbe:
             failureThreshold: 5
             httpGet:

@@ -37,8 +37,8 @@ spec:
             - containerPort: 5005 # API
           resources:
            requests:
-            cpu: 500m
-            memory: 256Mi
+            cpu: 150m
+            memory: 128Mi
            limits:
             cpu: 500m
             memory: 256Mi
@@ -169,8 +169,8 @@ spec:
             - containerPort: 8081 # API
           resources:
            requests:
-            cpu: 500m
-            memory: 512Mi
+            cpu: 250m
+            memory: 256Mi
            limits:
             cpu: 500m
             memory: 512Mi
