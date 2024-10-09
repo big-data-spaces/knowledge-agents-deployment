@@ -3,7 +3,9 @@
 This is a folder linking all the codes related to the Hey Catena! Dataspace virtualization products.
 The virtualization layer sits as a scalable facility between the backends (databases, filesystems, files, services) and the agents.
 The applied products are all ready-made Open Source components which have been tailored (sometimes: slightly extended) to fit into 
-the Catena-X deployments.
+the Catena-X deployments. 
+
+These images are not for productive usage. They may need further initialisation when started for the first time.
 
 It consists of
 

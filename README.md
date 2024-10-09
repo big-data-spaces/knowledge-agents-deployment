@@ -58,9 +58,10 @@ These are the further sub-modules of the Agents Kit
 - [Infrastructure](infrastructure/README.md) hosts "Infrastructure as Code" manifests and resources for easy deployment of above artifacts including a sample dataspace.
 
 Carved out external repositories
-- [Ontology](https://github.com/catenax-ng/product-ontology) hosts the CX domain ontologies (including the fully merged CX ontology and tooling) describing the semantics of the Catena-X Dataspace.
-- [Tractus-X Knowledge Agents EDC Extensions (KA-EDC)](http://github.com/catenax-ng/product-agents-edc) for enabled Semantic Web protocols over the Dataspace.
-- [Tractus-X Knowledge Agents Reference Implementations (KA)](http://github.com/catenax-ng/product-agents) which implement Semantic Web queries and semantics.
+- [Ontology](https://github.com/big-data-spaces/ontology) hosts the CX domain ontologies (including the fully merged CX ontology and tooling) describing the semantics of the Catena-X Dataspace.
+- [Tractus-X Knowledge Agents EDC Extensions (KA-EDC)](http://github.com/eclipse-tractusx/knowledge-agents-edc) for enabled Semantic Web protocols over the Dataspace.
+- [Tractus-X Knowledge Agents Reference Implementations (KA)](http://github.com/eclispse-tractusx/knowledge-agents) which implement Semantic Web queries and semantics.
+- [Tractus-X Knowledge Agents AAS Bridge (KA-AAS)](http://github.com/eclispse-tractusx/knowledge-agents-aas-bridge) which implements bridges between AAS and Semantic Web.
 
 Obsolete submodules:
 - UX hosted User Experience components and a sample portal/development environment for developing and executing semantically-driven logic and apps.

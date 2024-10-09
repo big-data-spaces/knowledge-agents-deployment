@@ -22,7 +22,7 @@
     <groupId>io.catenax</groupId>
     <artifactId>knowledge</artifactId>
     <packaging>pom</packaging>
-    <version>1.12.19-SNAPSHOT</version>
+    <version>1.14.24-SNAPSHOT</version>
     <name>Catena-X Knowledge Agents</name>
     <description>Top Level Project for all Knowledge Agents Modules</description>
 
@@ -30,8 +30,8 @@
     </dependencies>
 
     <properties>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
         <skipTests>false</skipTests>
 
        <com.azure.sdk.bom.version>1.2.2</com.azure.sdk.bom.version>
@@ -46,7 +46,7 @@
        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
        <!-- REPO -->
-       <repo>ghcr.io/catenax-ng/product-knowledge/</repo>
+       <repo>ghcr.io/big-data-spaces/knowledge-agents-deployment</repo>
        <platform>linux/amd64</platform>
 
     </properties>
@@ -118,6 +118,7 @@
                             <workingDirectory>${project.basedir}</workingDirectory>
                             <arguments>
                                 <argument>build</argument>
+                                <argument>--load</argument>
                                 <argument>--platform</argument>
                                 <argument>${platform}</argument>
                                 <argument>-f</argument>
