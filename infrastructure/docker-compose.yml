@@ -184,7 +184,7 @@ services:
   #  build:
   #    dockerfile: src/main/docker/Dockerfile
   #    context: ../dataspace/virtualize/druid
-  #  image: ghcr.io/catenax-ng/product-knowledge/virtualizer-druid:1.12.17-SNAPSHOT
+  #  image: ghcr.io/big-data-spaces/knowledge-agents-deployment/virtualizer-druid:1.12.17-SNAPSHOT
   #  platform: ${DOCKER_PLATFORM:-linux/amd64}
   #  ports:
   #    - "8888:8888" # http
@@ -199,7 +199,7 @@ services:
   #    build:
   #      dockerfile: src/main/docker/Dockerfile
   #      context: ../dataspace/agents/sparql-anything
-  #    image: ghcr.io/catenax-ng/product-knowledge/facadex-agent:1.12.17-SNAPSHOT
+  #    image: ghcr.io/big-data-spaces/knowledge-agents-deployment/facadex-agent:1.12.17-SNAPSHOT
   #    ports:
   #      - "3000:3000"
   #    volumes:
@@ -320,9 +320,9 @@ services:
       - "8700:8443" # AAS-API
       - "4048:4040" # DEBUG
     environment:
-      PROVIDER_SPARQL_ENDPOINT: http://sparql.local
+#      PROVIDER_SPARQL_ENDPOINT: http://sparql.local
       #PROVIDER_SPARQL_ENDPOINT: http://oem-data-plane:8082/api/agent
-      #PROVIDER_AGENT_PLANE: http://provider-agent:8082/sparql
+      PROVIDER_SPARQL_ENDPOINT: http://provider-agent:8082/sparql
       #PROVIDER_SPARQL_ENDPOINT: https://knowledge.int.catena-x.net/oem-provider-agent3/sparql
 #      JAVA_TOOL_OPTIONS: -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:4040
 #      TIMEOUT_SECONDS: 30

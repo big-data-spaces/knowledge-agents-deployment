@@ -112,7 +112,7 @@ spec:
            type: RuntimeDefault
       containers:
         - name: oem-provider-agent
-          image: tractusx/provisioning-agent:1.13.21-SNAPSHOT
+          image: ghcr.io/big-data-spaces/knowledge-agents/provisioning-agent:1.14.24-SNAPSHOT
           imagePullPolicy: Always
           securityContext:
             capabilities:
@@ -340,7 +340,7 @@ spec:
            type: RuntimeDefault
       containers:
         - name: oem-backend
-          image: ghcr.io/catenax-ng/product-knowledge/virtualizer-dremio:1.12.19-SNAPSHOT
+          image: ghcr.io/big-data-spaces/knowledge-agents-deployment/virtualizer-dremio:1.14.24-SNAPSHOT
           imagePullPolicy: Always
           securityContext:
             capabilities:

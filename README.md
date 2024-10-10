@@ -19,7 +19,7 @@
 
 # Catena-X Agents Kit Source Repository
 
-<img height="200" src="https://raw.githubusercontent.com/catenax-ng/product-knowledge/feature/ART3-382-documentation/static/img/agents_kit.png" align="left" style="margin-right:30px"/>
+<img height="200" src="https://raw.githubusercontent.com/big-data-spaces/knowledge-agents-deployment/feature/ART3-382-documentation/static/img/agents_kit.png" align="left" style="margin-right:30px"/>
 
 This is a [MonoRepo](https://en.wikipedia.org/wiki/Monorepo) hosting or linking all the module 
 and infrastructure codes related to the 

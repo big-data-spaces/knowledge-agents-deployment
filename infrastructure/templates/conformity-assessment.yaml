@@ -42,7 +42,7 @@ spec:
            type: RuntimeDefault
       containers:
         - name: conforming-agent
-          image: tractusx/conforming-agent:1.13.21-SNAPSHOT
+          image: ghcr.io/big-data-spaces/knowledge-agents/conforming-agent:1.14.24-SNAPSHOT
           imagePullPolicy: Always
           securityContext:
             capabilities:

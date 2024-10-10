@@ -199,7 +199,7 @@
      <repository>
        <id>github</id>
        <name>Catena-X Maven Repository on Github</name>
-       <url>https://maven.pkg.github.com/catenax-ng/product-knowledge</url>
+       <url>https://maven.pkg.github.com/big-data-spaces/knowledge-agents-deployment</url>
      </repository>
     </distributionManagement>
         

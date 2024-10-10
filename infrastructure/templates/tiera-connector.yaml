@@ -36,6 +36,8 @@ data:
     web.http.protocol.path=/api/v1/dsp
     web.http.public.port=8086
     web.http.public.path=/api/public
+    web.http.catalog.port=8089
+    web.http.catalog.path=/catalog
     tx.dpf.consumer.proxy.port=8088
       
     edc.dataplane.token.validation.endpoint=http://tiera-control-plane:8083/control/token
@@ -96,6 +98,11 @@ data:
     # Chapter Persistence
     ###
 
+    edc.datasource.default.name=default
+    edc.datasource.default.user=tiera_user
+    edc.datasource.default.password=sacred
+    edc.datasource.default.url=jdbc:postgresql://postgres:5432/tiera
+
     edc.datasource.asset.name=asset
     edc.datasource.asset.user=tiera_user
     edc.datasource.asset.password=sacred
@@ -135,6 +142,12 @@ data:
     edc.datasource.edr.user=tiera_user
     edc.datasource.edr.password=sacred
     edc.datasource.edr.url=jdbc:postgresql://postgresql:5432/tiera
+
+    edc.datasource.dataplaneinstance.name=dataplaneinstance
+    edc.datasource.dataplaneinstance.user=tiera_user
+    edc.datasource.dataplaneinstance.password=sacred
+    edc.datasource.dataplaneinstance.url=jdbc:postgresql://postgres:5432/tiera
+
   opentelemetry.properties: |-
     otel.javaagent.enabled=false
     otel.javaagent.debug=false
@@ -170,7 +183,7 @@ spec:
         seccompProfile:
           type: RuntimeDefault
       containers:
-        - image: tractusx/edc-controlplane-postgresql-azure-vault:0.7.3
+        - image: tractusx/edc-controlplane-postgresql-azure-vault:0.8.0-rc4
           imagePullPolicy: Always
           name: tiera-control-plane
           securityContext:
@@ -438,6 +451,11 @@ data:
     # Chapter Persistence
     ###
 
+    edc.datasource.default.name=default
+    edc.datasource.default.user=tiera_user
+    edc.datasource.default.password=sacred
+    edc.datasource.default.url=jdbc:postgresql://postgres:5432/tiera
+
     edc.datasource.edr.name=edr
     edc.datasource.edr.user=tiera_user
     edc.datasource.edr.password=sacred
@@ -491,7 +509,7 @@ spec:
         seccompProfile:
             type: RuntimeDefault
       containers:
-        - image: tractusx/agentplane-azure-vault:1.13.21-SNAPSHOT
+        - image: ghcr.io/big-data-spaces/knowledge-agents-edc/agentplane-azure-vault:1.14.24-SNAPSHOT
           imagePullPolicy: Always
           name: tiera-data-plane
           securityContext:

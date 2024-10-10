@@ -37,6 +37,8 @@ data:
     web.http.protocol.path=/api/v1/dsp
     web.http.public.port=8086
     web.http.public.path=/api/public
+    web.http.catalog.port=8089
+    web.http.catalog.path=/catalog
     tx.dpf.consumer.proxy.port=8088
 
     edc.dataplane.token.validation.endpoint=http://oem-control-plane:8083/control/token
@@ -82,11 +84,6 @@ data:
     ###
     # Chapter Data Planes
     ###
-    edc.dataplane.selector.agentplane.url=http://oem-data-plane:8083/api/signaling/v1/dataflows
-    edc.dataplane.selector.agentplane.sourcetypes=cx-common:Protocol?w3c:http:SPARQL,cx-common:Protocol?w3c:http:SKILL,HttpData,AmazonS3,AzureStorage
-    edc.dataplane.selector.agentplane.transfertypes=HttpData-PULL,HttpData-PUSH,AmazonS3-PUSH,AzureStorage-PUSH
-    edc.dataplane.selector.agentplane.destinationtypes=HttpData,HttpProxy,AmazonS3,AzureStorage
-    edc.dataplane.selector.agentplane.properties={ "publicApiUrl": "https://{{ .Values.ingress.host }}/oem-edc-data/{{ .Values.dataspace.bpnOem }}/api/public/" }
 
     edc.dataplane.token.expiry=360
     edc.dataplane.token.expiry.tolerance=10
@@ -96,6 +93,11 @@ data:
     ###
     # Chapter Persistence
     ###
+
+    edc.datasource.default.name=default
+    edc.datasource.default.user=oem_user
+    edc.datasource.default.password=sacred
+    edc.datasource.default.url=jdbc:postgresql://postgres:5432/oem
 
     edc.datasource.asset.name=asset
     edc.datasource.asset.user=oem_user
@@ -137,6 +139,11 @@ data:
     edc.datasource.edr.password=sacred
     edc.datasource.edr.url=jdbc:postgresql://postgresql:5432/oem
 
+    edc.datasource.dataplaneinstance.name=dataplaneinstance
+    edc.datasource.dataplaneinstance.user=oem_user
+    edc.datasource.dataplaneinstance.password=sacred
+    edc.datasource.dataplaneinstance.url=jdbc:postgresql://postgres:5432/oem
+
   configuration2.properties: |-
     ###############################################
     # LOCAL EDC CONTROL PLANE CONFIG (OEM CONSUMER)
@@ -169,6 +176,8 @@ data:
     web.http.protocol.path=/api/v1/dsp
     web.http.public.port=8086
     web.http.public.path=/api/public
+    web.http.catalog.port=8089
+    web.http.catalog.path=/catalog
     tx.dpf.consumer.proxy.port=8088
 
     edc.dataplane.token.validation.endpoint=http://oem-control-plane2:8083/control/token
@@ -214,11 +223,6 @@ data:
     ###
     # Chapter Data Planes
     ###
-    edc.dataplane.selector.agentplane.url=http://oem-data-plane:8083/api/signaling/v1/dataflows
-    edc.dataplane.selector.agentplane.sourcetypes=cx-common:Protocol?w3c:http:SPARQL,cx-common:Protocol?w3c:http:SKILL,HttpData,AmazonS3,AzureStorage
-    edc.dataplane.selector.agentplane.transfertypes=HttpData-PULL,HttpData-PUSH,AmazonS3-PUSH,AzureStorage-PUSH
-    edc.dataplane.selector.agentplane.destinationtypes=HttpData,HttpProxy,AmazonS3,AzureStorage
-    edc.dataplane.selector.agentplane.properties={ "publicApiUrl": "https://{{ .Values.ingress.host }}/oem-edc-data/{{ .Values.dataspace.bpnOem }}/api/public/" }
 
     edc.dataplane.token.expiry=360
     edc.dataplane.token.expiry.tolerance=10
@@ -228,6 +232,11 @@ data:
     ###
     # Chapter Persistence
     ###
+
+    edc.datasource.default.name=default
+    edc.datasource.default.user=oem2_user
+    edc.datasource.default.password=sacred
+    edc.datasource.default.url=jdbc:postgresql://postgres:5432/oem2
 
     edc.datasource.asset.name=asset
     edc.datasource.asset.user=oem2_user
@@ -269,6 +278,11 @@ data:
     edc.datasource.edr.password=sacred
     edc.datasource.edr.url=jdbc:postgresql://postgresql:5432/oem
 
+    edc.datasource.dataplaneinstance.name=dataplaneinstance
+    edc.datasource.dataplaneinstance.user=oem2_user
+    edc.datasource.dataplaneinstance.password=sacred
+    edc.datasource.dataplaneinstance.url=jdbc:postgresql://postgres:5432/oem2
+
   opentelemetry.properties: |-
     otel.javaagent.enabled=false
     otel.javaagent.debug=false
@@ -304,7 +318,7 @@ spec:
         seccompProfile:
           type: RuntimeDefault
       containers:
-        - image: tractusx/edc-controlplane-postgresql-azure-vault:0.7.3
+        - image: tractusx/edc-controlplane-postgresql-azure-vault:0.8.0-rc4
           imagePullPolicy: Always
           name: oem-control-plane
           securityContext:
@@ -486,7 +500,7 @@ spec:
         seccompProfile:
           type: RuntimeDefault
       containers:
-        - image: tractusx/edc-controlplane-postgresql-azure-vault:0.7.3
+        - image: tractusx/edc-controlplane-postgresql-azure-vault:0.8.0-rc4
           imagePullPolicy: Always
           name: oem-control-plane2
           securityContext:
@@ -680,12 +694,6 @@ data:
     web.http.callback.port=8187
     web.http.callback.path=/callback
 
-    edc.dataplane.selector.agentplane.url=http://oem-data-plane:8083/api/signaling/v1/dataflows
-    edc.dataplane.selector.agentplane.sourcetypes=cx-common:Protocol?w3c:http:SPARQL,cx-common:Protocol?w3c:http:SKILL,HttpData,AmazonS3,AzureStorage
-    edc.dataplane.selector.agentplane.transfertypes=HttpData-PULL,HttpData-PUSH,AmazonS3-PUSH,AzureStorage-PUSH
-    edc.dataplane.selector.agentplane.destinationtypes=HttpData,HttpProxy,AmazonS3,AzureStorage
-    edc.dataplane.selector.agentplane.properties={ "publicApiUrl": "http://oem-data-plane:8081/api/public/" }
-
     edc.control.endpoint=http://oem-data-plane:8083/api/signaling
     edc.dpf.selector.url=http://oem-control-plane:8083/control/v1/dataplanes
 
@@ -733,7 +741,7 @@ data:
     cx.agent.controlplane.management.provider=http://oem-control-plane:8081/management
     cx.agent.callback=http://oem-data-plane:8187/callback/transfer-process-started
     cx.agent.skill.contract.default=Contract?oem=Skill
-    cx.agent.edc.version=0.7.3
+    cx.agent.edc.version=0.8.0-rc4
     cx.agent.service.allow=(https?|edcs?)://.*
     cx.agent.service.deny=^$
     cx.agent.service.asset.allow=(https?|edcs?)://.*
@@ -751,6 +759,11 @@ data:
     ###
     # Chapter Persistence
     ###
+
+    edc.datasource.default.name=default
+    edc.datasource.default.user=oem_user
+    edc.datasource.default.password=sacred
+    edc.datasource.default.url=jdbc:postgresql://postgres:5432/oem
 
     edc.datasource.edr.name=edr
     edc.datasource.edr.user=oem_user
@@ -805,7 +818,7 @@ spec:
         seccompProfile:
           type: RuntimeDefault
       containers:
-        - image: tractusx/agentplane-azure-vault:1.13.21-SNAPSHOT
+        - image: ghcr.io/big-data-spaces/knowledge-agents-edc/agentplane-azure-vault:1.14.24-SNAPSHOT
           imagePullPolicy: Always
           name: oem-data-plane
           securityContext:

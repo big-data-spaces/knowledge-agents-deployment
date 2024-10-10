@@ -42,10 +42,10 @@ curl --location --request POST 'http://localhost:5005/api/rul' \
 
 1. Build docker
    ```
-    docker build -t ghcr.io/catenax-ng/product-knowledge/backend/rul-mock:0.6.1-SNAPSHOT .
+    docker build -t ghcr.io/big-data-spaces/knowledge-agents-deployment/backend/rul-mock:0.6.1-SNAPSHOT .
    ```
 
 2. Run docker
    ```
-    docker run -p5005:5005 ghcr.io/catenax-ng/product-knowledge/backend/rul-mock:0.6.1-SNAPSHOT
+    docker run -p5005:5005 ghcr.io/big-data-spaces/knowledge-agents-deployment/backend/rul-mock:0.6.1-SNAPSHOT
    ```

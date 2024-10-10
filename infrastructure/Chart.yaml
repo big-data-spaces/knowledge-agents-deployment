@@ -2,9 +2,9 @@
 apiVersion: v2
 name: knowledge-agents
 description: Knowledge Agents Kit Sample Dataspace
-home: https://github.com/catenax-ng/product-knowledge/infrastructure
+home: https://github.com/big-data-spaces/knowledge-agents-deployment/infrastructure
 type: application
-version: 1.13.21-SNAPSHOT
+version: 1.14.24-SNAPSHOT
 dependencies:
     - name: postgresql
       version: "15.2.12"
@@ -13,16 +13,17 @@ dependencies:
     - name: tractusx-connector-azure-vault
       alias: consumer-connector
       repository: https://eclipse-tractusx.github.io/charts/dev
-      version: 0.7.3
+      version: 0.8.0-rc4
     - name: agent-plane-azure-vault
       alias: consumer-agent-plane
-      version: "1.13.21-SNAPSHOT"
-      repository: https://big-data-spaces.github.io/knowledge-agents-deployment/infrastructure
+      version: "1.14.24-SNAPSHOT"
+      repository: https://big-data-spaces.github.io/knowledge-agents-edc
     - name: matchmaking-agent
       alias: consumer-agent
-      version: "1.13.21-SNAPSHOT"
-      repository: https://big-data-spaces.github.io/knowledge-agents-deployment/infrastructure
+      version: "1.14.24-SNAPSHOT"
+      repository: https://big-data-spaces.github.io/knowledge-agents
     - name: aas-bridge
-      version: "1.13.7-SNAPSHOT"
+      version: "1.14.24-SNAPSHOT"
+      repository: https://big-data-spaces.github.io/knowledge-agents-aas-bridge
       repository: https://eclipse-tractusx.github.io/charts/dev
 

@@ -176,11 +176,6 @@ consumer-connector:
       certManager:
         clusterIssuer: *clusterIssuer
     env:
-      EDC_DATAPLANE_SELECTOR_AGENTPLANE_URL: http://knowledge-agents-consumer-agent-plane-agentplane:8083/api/signaling/v1/dataflows
-      EDC_DATAPLANE_SELECTOR_AGENTPLANE_SOURCETYPES: cx-common:Protocol?w3c:http:SPARQL,cx-common:Protocol?w3c:http:SKILL
-      EDC_DATAPLANE_SELECTOR_AGENTPLANE_TRANSFERTYPES: HttpData-PULL
-      EDC_DATAPLANE_SELECTOR_AGENTPLANE_DESTINATIONTYPES: HttpProxy
-      EDC_DATAPLANE_SELECTOR_AGENTPLANE_PROPERTIES: '{ "publicApiUrl": "https://consumer-agent.knowledge.int.catena-x.net/api/public/" }'
       EDC_VAULT_URL_OVERRIDE: "https://tsyidsconnectors.vault.azure.net/"
       EDC_VAULT_URL_OVERRIDE_UNSAFE: false
       EDC_IAM_TRUSTED-ISSUER_0-ISSUER_ID: did:web:dim-static-prod.dis-cloud-prod.cfapps.eu10-004.hana.ondemand.com:dim-hosted:2f45795c-d6cc-4038-96c9-63cedc0cd266:holder-iatp
@@ -208,7 +203,7 @@ consumer-connector:
 
 consumer-agent-plane:
   image:
-    repository: tractusx/agentplane-azure-vault
+    repository: ghcr.io/big-data-spaces/knowledge-agents-edc/agentplane-azure-vault:1.14.24-SNAPSHOT
   resources:
     limits:
       # -- Maximum CPU limit
@@ -320,8 +315,9 @@ consumer-agent-plane:
 
 consumer-agent:
   image:
-    registry: tractusx/
+    registry: ghcr.io/big-data-spaces/knowledge-agents/
     repository: matchmaking-agent
+    tag: 1.14.24-SNAPSHOT
   resources:
     limits:
       # -- Maximum CPU limit
@@ -411,9 +407,9 @@ consumer-agent:
 
 aas-bridge:
   image:
-    registry: tractusx/
+    registry: ghcr.io/big-data-spaces/knowledge-agents-aas-bridge/
     repository: aas-bridge
-    tag: 1.13.7-SNAPSHOT
+    tag: 1.14.24-SNAPSHOT
   resources:
     limits:
       # -- Maximum CPU limit

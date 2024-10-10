@@ -1,7 +1,7 @@
 [PrefixDeclaration]
 uuid:		urn:uuid:
 bpnl:		bpn:legal:
-cx:			https://raw.githubusercontent.com/catenax-ng/product-knowledge/main/ontology/cx_ontology.ttl#
+cx:			https://raw.githubusercontent.com/big-data-spaces/knowledge-agents-deployment/main/ontology/cx_ontology.ttl#
 owl:		http://www.w3.org/2002/07/owl#
 rdf:		http://www.w3.org/1999/02/22-rdf-syntax-ns#
 xml:		http://www.w3.org/XML/1998/namespace
