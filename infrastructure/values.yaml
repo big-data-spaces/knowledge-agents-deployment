@@ -203,7 +203,8 @@ consumer-connector:
 
 consumer-agent-plane:
   image:
-    repository: ghcr.io/big-data-spaces/knowledge-agents-edc/agentplane-azure-vault:1.14.24-SNAPSHOT
+    repository: ghcr.io/big-data-spaces/knowledge-agents-edc/agentplane-azure-vault
+    tag:  1.14.24-SNAPSHOT
   resources:
     limits:
       # -- Maximum CPU limit
