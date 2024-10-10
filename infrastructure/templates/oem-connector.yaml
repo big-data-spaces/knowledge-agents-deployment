@@ -97,7 +97,7 @@ data:
     edc.datasource.default.name=default
     edc.datasource.default.user=oem_user
     edc.datasource.default.password=sacred
-    edc.datasource.default.url=jdbc:postgresql://postgres:5432/oem
+    edc.datasource.default.url=jdbc:postgresql://postgresql:5432/oem
 
     edc.datasource.asset.name=asset
     edc.datasource.asset.user=oem_user
@@ -142,7 +142,7 @@ data:
     edc.datasource.dataplaneinstance.name=dataplaneinstance
     edc.datasource.dataplaneinstance.user=oem_user
     edc.datasource.dataplaneinstance.password=sacred
-    edc.datasource.dataplaneinstance.url=jdbc:postgresql://postgres:5432/oem
+    edc.datasource.dataplaneinstance.url=jdbc:postgresql://postgresql:5432/oem
 
   configuration2.properties: |-
     ###############################################
@@ -236,7 +236,7 @@ data:
     edc.datasource.default.name=default
     edc.datasource.default.user=oem2_user
     edc.datasource.default.password=sacred
-    edc.datasource.default.url=jdbc:postgresql://postgres:5432/oem2
+    edc.datasource.default.url=jdbc:postgresql://postgresql:5432/oem2
 
     edc.datasource.asset.name=asset
     edc.datasource.asset.user=oem2_user
@@ -281,7 +281,7 @@ data:
     edc.datasource.dataplaneinstance.name=dataplaneinstance
     edc.datasource.dataplaneinstance.user=oem2_user
     edc.datasource.dataplaneinstance.password=sacred
-    edc.datasource.dataplaneinstance.url=jdbc:postgresql://postgres:5432/oem2
+    edc.datasource.dataplaneinstance.url=jdbc:postgresql://postgresql:5432/oem2
 
   opentelemetry.properties: |-
     otel.javaagent.enabled=false
@@ -763,7 +763,7 @@ data:
     edc.datasource.default.name=default
     edc.datasource.default.user=oem_user
     edc.datasource.default.password=sacred
-    edc.datasource.default.url=jdbc:postgresql://postgres:5432/oem
+    edc.datasource.default.url=jdbc:postgresql://postgresql:5432/oem
 
     edc.datasource.edr.name=edr
     edc.datasource.edr.user=oem_user
